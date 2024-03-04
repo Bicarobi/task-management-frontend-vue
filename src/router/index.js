@@ -1,25 +1,77 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHistory } from "vue-router";
+import HomeView from "../views/HomeView.vue";
+import AboutView from "../views/AboutView.vue";
+import Jobs from "../views/Jobs/Jobs.vue";
+import JobDetails from "../views/Jobs/JobDetails.vue";
+import Tasks from "../views/Tasks/Tasks.vue";
+import TaskDetails from "../views/Tasks/TaskDetails.vue";
+import NotFound from "../views/NotFound.vue";
+import SignIn from "../views/Auth/SignIn.vue";
+import SignUp from "../views/Auth/SignUp.vue";
 
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
-]
+	{
+		path: "/",
+		name: "home",
+		component: HomeView,
+	},
+	{
+		path: "/about",
+		name: "about",
+		component: AboutView,
+	},
+	{
+		path: "/signin",
+		name: "signIn",
+		component: SignIn,
+	},
+	{
+		path: "/signup",
+		name: "signUp",
+		component: SignUp,
+	},
+	{
+		path: "/jobs",
+		name: "jobs",
+		component: Jobs,
+	},
+	{
+		path: "/jobs/:id",
+		name: "jobDetails",
+		component: JobDetails,
+		props: true,
+	},
+	{
+		path: "/tasks",
+		name: "tasks",
+		component: Tasks,
+	},
+	{
+		path: "/tasks/:id",
+		name: "taskDetails",
+		component: TaskDetails,
+		props: true,
+	},
+	// redirect
+	{
+		path: "/all-jobs",
+		redirect: "/jobs",
+	},
+	{
+		path: "/all-tasks",
+		redirect: "/tasks",
+	},
+	// catchall 404
+	{
+		path: "/:catchAll(.*)",
+		name: "notFound",
+		component: NotFound,
+	},
+];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+	history: createWebHistory(process.env.BASE_URL),
+	routes,
+});
 
-export default router
+export default router;
