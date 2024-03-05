@@ -1,15 +1,18 @@
 <template>
-	<form @submit.prevent="handleSubmit" v-on:keydown.enter.prevent>
-		<label>Username:</label>
-		<input type="text" required v-model="username" />
+	<div v-if="!this.$myGlobalVariable.username">
+		<form @submit.prevent="handleSubmit" v-on:keydown.enter.prevent>
+			<label>Username:</label>
+			<input type="text" required v-model="username" />
 
-		<label>Password:</label>
-		<input type="password" required v-model="password" />
+			<label>Password:</label>
+			<input type="password" required v-model="password" />
 
-		<div class="submit">
-			<button>Sign In</button>
-		</div>
-	</form>
+			<div class="submit">
+				<button>Sign In</button>
+			</div>
+		</form>
+	</div>
+	<div v-else>Already logged in!</div>
 </template>
 
 <script>
@@ -30,15 +33,10 @@ export default {
 			fetch("http://localhost:3000/auth/signin", requestOptions)
 				.then((res) => res.json())
 				.then((data) => {
-					app.config.globalProperties.$accessToken = data.accessToken;
-					app.config.globalProperties.$username = this.username;
-					/* provide("localstorage"); */
-					/* this.$localStorage.accessToken = data.accessToken;
-					this.$localStorage.username = this.username; */
-					/* localStorage.accessToken = data.accessToken;
-					localStorage.name = this.username; */
+					this.$myGlobalVariable.accessToken = data.accessToken;
+					this.$myGlobalVariable.username = this.username;
 				})
-				.then(console.log(this.$accessToken, this.$username));
+				.then(console.log(this.$myGlobalVariable.accessToken, this.$myGlobalVariable.username));
 		},
 	},
 };

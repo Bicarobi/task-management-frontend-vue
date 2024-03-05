@@ -1,4 +1,4 @@
-import { createApp, provide } from "vue";
+import { createApp, reactive } from "vue";
 import App from "./App.vue";
 import router from "./router";
 
@@ -22,7 +22,14 @@ import router from "./router";
 	},
 }); */
 
-createApp(App).use(router).mount("#app");
+const app = createApp(App);
+
+app.config.globalProperties.$myGlobalVariable = reactive({
+	accessToken: "",
+	username: "",
+});
+
+app.use(router).mount("#app");
 
 /* app.config.globalProperties.$localStorage = { accessToken: "", username: "" };
  */

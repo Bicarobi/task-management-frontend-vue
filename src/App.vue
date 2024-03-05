@@ -1,11 +1,14 @@
 <template>
 	<nav>
-		<router-link to="/">Home</router-link> |
-		<router-link :to="{ name: 'about' }">About</router-link>
-		<router-link :to="{ name: 'signIn' }">Sign In</router-link>
-		<router-link :to="{ name: 'signUp' }">Sign Up</router-link>
-		<router-link :to="{ name: 'tasks' }">Tasks</router-link>
-		<div>{{ this.$accessToken }}</div>
+		<router-link to="/">Home</router-link>
+		<router-link :to="{ name: 'about' }">About</router-link> |
+		<router-link :to="{ name: 'signIn' }" v-if="!this.$myGlobalVariable.username">Sign In</router-link>
+		<router-link :to="{ name: 'signUp' }" v-if="!this.$myGlobalVariable.username">Sign Up</router-link>
+		<router-link :to="{ name: 'tasks' }" v-if="this.$myGlobalVariable.username">Tasks</router-link>
+		<router-link :to="{ name: 'createTask' }" v-if="this.$myGlobalVariable.username">Create a Task</router-link>
+		<router-link :to="{ name: 'deleteTask' }" v-if="this.$myGlobalVariable.username">Delete a Task</router-link>
+		<div>{{ this.$myGlobalVariable.username }}</div>
+		<button v-if="this.$myGlobalVariable.username" @click="logOut">Sign Out</button>
 	</nav>
 	<router-view />
 </template>
@@ -13,26 +16,13 @@
 <script>
 export default {
 	data() {
-		return {
-			isLoggedIn: false,
-			username: null,
-		};
-	},
-	computed: {
-		isLoggedIn() {
-			return this.$localStorage.token !== "";
-		},
+		return {};
 	},
 	methods: {
-		logIn() {
-			this.username = localStorage.name;
+		logOut() {
+			this.$myGlobalVariable.username = "";
+			this.$myGlobalVariable.accessToken = "";
 		},
-	},
-	mounted() {
-		if (localStorage.name) {
-			this.name = localStorage.name;
-		}
-		window.addEventListener("storage", updateLocalStorage);
 	},
 };
 </script>

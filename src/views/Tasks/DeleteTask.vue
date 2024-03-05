@@ -3,11 +3,11 @@
 	<div v-if="!this.$myGlobalVariable.username">Not logged in!</div>
 	<div v-else-if="tasks.length">
 		<div v-for="task in tasks" :key="task.id" class="task">
-			<router-link :to="{ name: 'taskDetails', params: { id: task.id } }">
+			<button @click="deleteTask(task.id)">
 				<h2>
 					{{ task.title }}
 				</h2>
-			</router-link>
+			</button>
 		</div>
 	</div>
 	<div v-else>
@@ -30,6 +30,17 @@ export default {
 				.then((data) => (this.tasks = data))
 				.catch((err) => console.log(err.message));
 		}
+	},
+	methods: {
+		deleteTask(id) {
+			console.log("http://localhost:3000/tasks/" + id);
+			const requestOptions = {
+				method: "DELETE",
+				headers: { Authorization: "Bearer " + this.$myGlobalVariable.accessToken },
+			};
+
+			fetch("http://localhost:3000/tasks/" + id, requestOptions);
+		},
 	},
 };
 </script>

@@ -5,6 +5,8 @@ import Jobs from "../views/Jobs/Jobs.vue";
 import JobDetails from "../views/Jobs/JobDetails.vue";
 import Tasks from "../views/Tasks/Tasks.vue";
 import TaskDetails from "../views/Tasks/TaskDetails.vue";
+import CreateTask from "../views/Tasks/CreateTask.vue";
+import DeleteTask from "../views/Tasks/DeleteTask.vue";
 import NotFound from "../views/NotFound.vue";
 import SignIn from "../views/Auth/SignIn.vue";
 import SignUp from "../views/Auth/SignUp.vue";
@@ -50,6 +52,18 @@ const routes = [
 		path: "/tasks/:id",
 		name: "taskDetails",
 		component: TaskDetails,
+		props: true,
+	},
+	{
+		path: "/createtask/",
+		name: "createTask",
+		component: CreateTask,
+		props: true,
+	},
+	{
+		path: "/deletetask/",
+		name: "deleteTask",
+		component: DeleteTask,
 		props: true,
 	},
 	// redirect
