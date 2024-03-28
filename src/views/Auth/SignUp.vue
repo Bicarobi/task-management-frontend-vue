@@ -28,7 +28,7 @@ export default {
 				body: JSON.stringify({ username: this.username, password: this.password }),
 			};
 
-			fetch("http://localhost:3000/auth/signup", requestOptions).then((res) => console.log(res.json()));
+			fetch(process.env.VUE_APP_BASE_URL + "/auth/signup", requestOptions).then((res) => console.log(res.json()));
 		},
 	},
 };
