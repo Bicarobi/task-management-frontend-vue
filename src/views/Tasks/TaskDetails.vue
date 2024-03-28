@@ -19,7 +19,7 @@ export default {
 	},
 	mounted() {
 		if (this.$myGlobalVariable.accessToken) {
-			fetch(process.env.VUE_APP_BASE_URL + "/tasks" + this.id, { headers: { Authorization: "Bearer " + this.$myGlobalVariable.accessToken } })
+			fetch(process.env.VUE_APP_BASE_URL + "/tasks/" + this.id, { headers: { Authorization: "Bearer " + this.$myGlobalVariable.accessToken } })
 				.then((res) => res.json())
 				.then((data) => (this.task = data))
 				.catch((err) => console.log(err.message));

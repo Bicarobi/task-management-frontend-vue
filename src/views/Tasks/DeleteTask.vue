@@ -33,13 +33,13 @@ export default {
 	},
 	methods: {
 		deleteTask(id) {
-			console.log("http://localhost:3000/tasks/" + id);
+			console.log(process.env.VUE_APP_BASE_URL + "/tasks/" + id);
 			const requestOptions = {
 				method: "DELETE",
 				headers: { Authorization: "Bearer " + this.$myGlobalVariable.accessToken },
 			};
 
-			fetch("http://localhost:3000/tasks/" + id, requestOptions);
+			fetch(process.env.VUE_APP_BASE_URL + "/tasks/" + id, requestOptions);
 		},
 	},
 };
