@@ -33,7 +33,7 @@ export default {
 				body: JSON.stringify({ title: this.title, description: this.description }),
 			};
 
-			fetch("http://localhost:3000/tasks", requestOptions).then((res) => console.log(res.json()));
+			fetch(process.env.VUE_APP_BASE_URL + "/tasks", requestOptions).then((res) => console.log(res.json()));
 		},
 	},
 };
