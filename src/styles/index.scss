@@ -32,15 +32,15 @@ $desktop: "(min-width: 1201px)";
 
 [data-theme="light"] {
 	--color1: #{$white1};
-	--color2: #{$white2};
+	--color2: #{$orange};
 	--color3: #{$gray1};
 	--color4: #{$gray2};
 }
 
 [data-theme="dark"] {
-	--color1: #{$white1};
-	--color2: #{$white2};
-	--color3: #{$gray1};
+	--color1: #{$gray1};
+	--color2: #{$yellow};
+	--color3: #{$white1};
 	--color4: #{$gray2};
 }
 
@@ -50,6 +50,8 @@ $desktop: "(min-width: 1201px)";
 @import "./components/SettingsMenu";
 
 body {
+	background-color: var(--color1);
+
 	padding-top: 50px;
 }
 
@@ -74,6 +76,8 @@ body {
 	font-family: Roboto, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+
+	color: var(--color3);
 }
 
 //SCROLLBAR

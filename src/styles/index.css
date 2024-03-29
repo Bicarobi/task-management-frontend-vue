@@ -12,15 +12,15 @@
 }
 [data-theme=light] {
   --color1: #fff;
-  --color2: #ebebeb;
+  --color2: #fb7100;
   --color3: #292929;
   --color4: #2b2b2b;
 }
 
 [data-theme=dark] {
-  --color1: #fff;
-  --color2: #ebebeb;
-  --color3: #292929;
+  --color1: #292929;
+  --color2: #fbb300;
+  --color3: #fff;
   --color4: #2b2b2b;
 }
 
@@ -51,6 +51,7 @@
 .navbar-container > .grid-container > .grid-left-side > .site-name {
   font-size: 26px;
   font-weight: bold;
+  color: var(--color3);
 }
 .navbar-container > .grid-container > .grid-right-side {
   grid-area: right-side;
@@ -61,6 +62,19 @@
   align-items: center;
   justify-content: flex-start;
   gap: 20px;
+}
+.navbar-container > .grid-container > .grid-right-side > a {
+  font-weight: bold;
+  color: var(--color3);
+  text-decoration: none;
+}
+.navbar-container > .grid-container > .grid-right-side > a.router-link-exact-active {
+  color: var(--color2);
+}
+.navbar-container > .grid-container > .grid-right-side > .username {
+  font-weight: bold;
+  color: var(--color3);
+  margin-left: 30px;
 }
 
 .settings-menu-container {
@@ -79,11 +93,13 @@
   gap: 10px;
   border-radius: 10px;
   padding: 20px;
-  background-color: white;
+  color: var(--color3);
+  background-color: var(--color1);
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.06);
 }
 
 body {
+  background-color: var(--color1);
   padding-top: 50px;
 }
 
@@ -110,6 +126,7 @@ body {
   font-family: Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--color3);
 }
 
 /* width */

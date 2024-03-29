@@ -11,7 +11,7 @@
 				<router-link :to="{ name: 'tasks' }" v-if="this.$myGlobalVariable.username">Tasks</router-link>
 				<!-- <router-link :to="{ name: 'createTask' }">Create a Task</router-link>
 					<router-link :to="{ name: 'deleteTask' }">Delete a Task</router-link> -->
-				<div v-if="this.$myGlobalVariable.username">
+				<div class="username" v-if="this.$myGlobalVariable.username">
 					{{ this.$myGlobalVariable.username }}
 				</div>
 				<SettingsIcon @click="openSettings(false, false)" v-if="this.$myGlobalVariable.username" />
