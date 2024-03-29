@@ -1,6 +1,6 @@
 <template>
-	<div class="home">
-		<h1>Homepage</h1>
+	<div class="home-container">
+		<div class="current-page">Home</div>
 		<p>
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste officiis mollitia voluptatibus et, veniam nobis assumenda ut blanditiis quod quisquam odit optio dignissimos nulla pariatur ad
 			dolores, eligendi asperiores, obcaecati perferendis. Nihil dicta veniam in quae beatae mollitia, ullam tempora accusantium quos. Sequi facilis dolores architecto a optio sint eaque

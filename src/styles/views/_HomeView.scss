@@ -1,0 +1,26 @@
+.home-container {
+	width: 100%;
+	height: 100%;
+	padding: 0px 80px 30px 80px;
+
+	color: var(--color3);
+
+	@media #{$tablet} {
+		padding: 20px 20px 20px 20px;
+	}
+
+	@media #{$mobile} {
+		padding: 30px 30px 30px 30px;
+	}
+
+	> .current-page {
+		font-size: 26px;
+		text-transform: capitalize;
+		font-weight: bold;
+		width: fit-content;
+
+		@media #{$mobile} {
+			font-size: 26px;
+		}
+	}
+}

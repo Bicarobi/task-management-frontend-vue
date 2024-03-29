@@ -8,9 +8,9 @@ import TaskDetails from "../views/Tasks/TaskDetails.vue";
 import CreateTask from "../views/Tasks/CreateTask.vue";
 import DeleteTask from "../views/Tasks/DeleteTask.vue";
 import NotFound from "../views/NotFound.vue";
-import SignIn from "../views/Auth/SignIn.vue";
-import SignUp from "../views/Auth/SignUp.vue";
-import Profile from "../views/Auth/Profile.vue";
+import SignInView from "../views/Auth/SignInView.vue";
+import SignUpView from "../views/Auth/SignUpView.vue";
+import ProfileView from "../views/Auth/ProfileView.vue";
 
 const routes = [
 	{
@@ -26,17 +26,17 @@ const routes = [
 	{
 		path: "/signin",
 		name: "signIn",
-		component: SignIn,
+		component: SignInView,
 	},
 	{
 		path: "/signup",
 		name: "signUp",
-		component: SignUp,
+		component: SignUpView,
 	},
 	{
 		path: "/profile/:username",
 		name: "profile",
-		component: Profile,
+		component: ProfileView,
 	},
 	{
 		path: "/jobs",

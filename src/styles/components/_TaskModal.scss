@@ -1,0 +1,17 @@
+.task-modal-container {
+	position: fixed;
+	width: 50%;
+	height: 50%;
+	border-radius: 10px;
+	padding: 20px;
+	margin-bottom: 20px;
+
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 30;
+
+	color: var(--color3);
+	background-color: var(--color1);
+	box-shadow: 0px 0px 6px rgb(0 0 0 / 5%);
+}

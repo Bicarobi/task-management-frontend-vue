@@ -1,0 +1,30 @@
+.task-card-container {
+	width: 100%;
+	height: max-content;
+
+	border-radius: 10px;
+	padding: 20px;
+	margin-bottom: 20px;
+
+	color: var(--color3);
+	background-color: var(--color1);
+	box-shadow: 0px 0px 6px rgb(0 0 0 / 5%);
+
+	> .task-card-bar {
+		width: 100%;
+
+		display: flex;
+		justify-content: flex-end;
+		margin-bottom: 10px;
+	}
+
+	> .task-card-content {
+		> .task-title {
+			font-size: 20px;
+			font-weight: bold;
+		}
+
+		> .task-description {
+		}
+	}
+}

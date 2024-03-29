@@ -1,8 +1,10 @@
 $white1: #fff;
 $white2: #ebebeb;
+$white3: #e3e3e3;
 
 $gray1: #292929;
 $gray2: #2b2b2b;
+$gray3: #373737;
 
 $yellow: #fbb300;
 $orange: #fb7100;
@@ -34,25 +36,33 @@ $desktop: "(min-width: 1201px)";
 	--color1: #{$white1};
 	--color2: #{$orange};
 	--color3: #{$gray1};
-	--color4: #{$gray2};
+	--color4: #{$white3};
 }
 
 [data-theme="dark"] {
 	--color1: #{$gray1};
 	--color2: #{$yellow};
 	--color3: #{$white1};
-	--color4: #{$gray2};
+	--color4: #{$gray3};
 }
 
 @import "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap";
 
+@import "./App";
+@import "./views/AboutView";
+@import "./views/HomeView";
+@import "./views/Tasks";
+
 @import "./components/NavBar";
 @import "./components/SettingsMenu";
+@import "./components/TaskModal";
+@import "./components/TaskCard";
+@import "./components/OptionsMenu";
 
 body {
 	background-color: var(--color1);
 
-	padding-top: 50px;
+	padding-top: 100px;
 }
 
 html {
@@ -63,21 +73,13 @@ html {
 html,
 body {
 	box-sizing: border-box;
+	margin: 0;
 }
 *,
 *:before,
 *:after {
 	box-sizing: inherit;
 	transition: 0.3s;
-}
-
-#app {
-	/* 	font-family: Avenir, Helvetica, Arial, sans-serif; */
-	font-family: Roboto, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-
-	color: var(--color3);
 }
 
 //SCROLLBAR

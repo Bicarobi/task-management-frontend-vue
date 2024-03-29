@@ -1,0 +1,92 @@
+.tasks-container {
+	width: 100%;
+	height: 100%;
+	padding: 0px 80px 30px 80px;
+
+	color: var(--color3);
+
+	@media #{$tablet} {
+		padding: 20px 20px 20px 20px;
+	}
+
+	@media #{$mobile} {
+		padding: 30px 30px 30px 30px;
+	}
+
+	> .current-page {
+		font-size: 26px;
+		text-transform: capitalize;
+		font-weight: bold;
+		width: fit-content;
+
+		@media #{$mobile} {
+			font-size: 26px;
+		}
+	}
+
+	> .grid-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: auto;
+		grid-template-areas: "left-side middle right-side";
+		justify-items: center;
+
+		gap: 20px;
+
+		> .grid-left-side {
+			grid-area: left-side;
+
+			width: 100%;
+
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+			flex-wrap: wrap;
+
+			padding: 20px;
+			background-color: var(--color4);
+			border-radius: 15px;
+
+			> .tasks-bar {
+				width: 100%;
+
+				display: flex;
+
+				margin-bottom: 20px;
+				gap: 15px;
+
+				> .tasks-type {
+					font-size: 16px;
+					font-weight: bold;
+					margin-right: auto;
+				}
+			}
+		}
+
+		> .grid-middle {
+			grid-area: middle;
+
+			width: 100%;
+
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row;
+			align-items: flex-start;
+			justify-content: flex-start;
+		}
+
+		> .grid-right-side {
+			grid-area: right-side;
+
+			width: 100%;
+
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row;
+			align-items: flex-start;
+			justify-content: flex-start;
+			gap: 20px;
+		}
+	}
+}
