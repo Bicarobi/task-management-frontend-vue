@@ -1,0 +1,70 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap";
+:root {
+  --font-size1: 16px;
+  --icon-size: 26px;
+  --icon-size2: 52px;
+}
+
+@media (max-width: 700px) {
+  :root {
+    --icon-size2: 32px;
+  }
+}
+[data-theme=light] {
+  --color1: #fff;
+  --color2: #ebebeb;
+  --color3: #292929;
+  --color4: #2b2b2b;
+}
+
+[data-theme=dark] {
+  --color1: #fff;
+  --color2: #ebebeb;
+  --color3: #292929;
+  --color4: #2b2b2b;
+}
+
+html {
+  overflow-y: scroll;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+html,
+body {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  transition: 0.3s;
+}
+
+#app {
+  /* 	font-family: Avenir, Helvetica, Arial, sans-serif; */
+  font-family: Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+@media (max-width: 700px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--color1);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--color1);
+}/*# sourceMappingURL=index.css.map */

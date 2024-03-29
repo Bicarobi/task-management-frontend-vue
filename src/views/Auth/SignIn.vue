@@ -30,6 +30,7 @@ export default {
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ username: this.username, password: this.password }),
 			};
+
 			fetch(process.env.VUE_APP_BASE_URL + "/auth/signin", requestOptions)
 				.then((res) => res.json())
 				.then((data) => {
