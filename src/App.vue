@@ -1,29 +1,14 @@
 <template>
-	<nav>
-		<router-link to="/">Home</router-link>
-		<router-link :to="{ name: 'about' }">About</router-link> |
-		<router-link :to="{ name: 'signIn' }" v-if="!this.$myGlobalVariable.username">Sign In</router-link>
-		<router-link :to="{ name: 'signUp' }" v-if="!this.$myGlobalVariable.username">Sign Up</router-link>
-		<router-link :to="{ name: 'tasks' }" v-if="this.$myGlobalVariable.username">Tasks</router-link>
-		<router-link :to="{ name: 'createTask' }" v-if="this.$myGlobalVariable.username">Create a Task</router-link>
-		<router-link :to="{ name: 'deleteTask' }" v-if="this.$myGlobalVariable.username">Delete a Task</router-link>
-		<div>{{ this.$myGlobalVariable.username }}</div>
-		<button v-if="this.$myGlobalVariable.username" @click="logOut">Sign Out</button>
-	</nav>
+	<NavBar />
 	<router-view />
 </template>
 
 <script>
+import NavBar from "./components/NavBar.vue";
+
 export default {
-	data() {
-		return {};
-	},
-	methods: {
-		logOut() {
-			this.$myGlobalVariable.username = "";
-			this.$myGlobalVariable.accessToken = "";
-		},
-	},
+	name: "App",
+	components: { NavBar },
 };
 </script>
 

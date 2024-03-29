@@ -36,6 +36,8 @@ export default {
 				.then((data) => {
 					this.$myGlobalVariable.accessToken = data.accessToken;
 					this.$myGlobalVariable.username = this.username;
+					localStorage.accessToken = this.$myGlobalVariable.accessToken;
+					localStorage.username = this.$myGlobalVariable.username;
 				})
 				.then(console.log(this.$myGlobalVariable.accessToken, this.$myGlobalVariable.username));
 		},
