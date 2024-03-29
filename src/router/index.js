@@ -10,6 +10,7 @@ import DeleteTask from "../views/Tasks/DeleteTask.vue";
 import NotFound from "../views/NotFound.vue";
 import SignIn from "../views/Auth/SignIn.vue";
 import SignUp from "../views/Auth/SignUp.vue";
+import Profile from "../views/Auth/Profile.vue";
 
 const routes = [
 	{
@@ -31,6 +32,11 @@ const routes = [
 		path: "/signup",
 		name: "signUp",
 		component: SignUp,
+	},
+	{
+		path: "/profile/:username",
+		name: "profile",
+		component: Profile,
 	},
 	{
 		path: "/jobs",
@@ -65,15 +71,6 @@ const routes = [
 		name: "deleteTask",
 		component: DeleteTask,
 		props: true,
-	},
-	// redirect
-	{
-		path: "/all-jobs",
-		redirect: "/jobs",
-	},
-	{
-		path: "/all-tasks",
-		redirect: "/tasks",
 	},
 	// catchall 404
 	{
