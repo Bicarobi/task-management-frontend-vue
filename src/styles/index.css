@@ -133,7 +133,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   padding: 20px;
   background-color: var(--color4);
@@ -154,20 +154,47 @@
   grid-area: middle;
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 20px;
+  background-color: var(--color4);
+  border-radius: 15px;
+}
+.tasks-container > .grid-container > .grid-middle > .tasks-bar {
+  width: 100%;
+  display: flex;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+.tasks-container > .grid-container > .grid-middle > .tasks-bar > .tasks-type {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: auto;
 }
 .tasks-container > .grid-container > .grid-right-side {
   grid-area: right-side;
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
+  background-color: var(--color4);
+  border-radius: 15px;
+}
+.tasks-container > .grid-container > .grid-right-side > .tasks-bar {
+  width: 100%;
+  display: flex;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+.tasks-container > .grid-container > .grid-right-side > .tasks-bar > .tasks-type {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: auto;
 }
 
 .navbar-container {
@@ -176,7 +203,9 @@
   left: 0;
   width: 100%;
   padding: 15px 5px 15px 30px;
+  background-color: var(--color1);
   box-shadow: 0px -10px 16px rgba(0, 0, 0, 0.1882352941);
+  z-index: 50;
 }
 .navbar-container > .grid-container {
   display: grid;
@@ -271,7 +300,7 @@
   height: -moz-max-content;
   height: max-content;
   border-radius: 10px;
-  padding: 20px;
+  padding: 5px 20px 20px 20px;
   margin-bottom: 20px;
   color: var(--color3);
   background-color: var(--color1);
@@ -281,7 +310,15 @@
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 10px;
+}
+.task-card-container > .task-card-content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  display: flex;
+  gap: 20px;
 }
 .task-card-container > .task-card-content > .task-title {
   font-size: 20px;
@@ -303,6 +340,56 @@
   color: var(--color3);
   background-color: var(--color1);
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.05);
+}
+
+.create-task-modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 30;
+  max-width: 420px;
+  border-radius: 10px;
+  padding: 10px 40px 20px 40px;
+  color: var(--color3);
+  background-color: var(--color1);
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.05);
+}
+.create-task-modal-container > .modal-content > form {
+  text-align: left;
+}
+.create-task-modal-container > .modal-content > form > label {
+  color: #aaa;
+  display: inline-block;
+  margin: 25px 0 5px;
+  font-size: 0.6em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.create-task-modal-container > .modal-content > form > input,
+.create-task-modal-container > .modal-content > form select {
+  display: block;
+  padding: 10px 6px;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  color: #555;
+  font-weight: bold;
+  background-color: var(--color1);
+}
+.create-task-modal-container > .modal-content > form > .submit {
+  text-align: center;
+}
+.create-task-modal-container > .modal-content > form > .submit > button {
+  background: var(--color2);
+  border: 0;
+  padding: 10px 20px;
+  margin-top: 20px;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 body {

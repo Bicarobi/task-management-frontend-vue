@@ -45,6 +45,7 @@ export default {
 	},
 	data() {
 		return {
+			switchedTheme: false,
 			settingsMenuOpened: false,
 		};
 	},

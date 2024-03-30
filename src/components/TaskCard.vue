@@ -3,7 +3,7 @@
 		<div class="task-card-bar">
 			<div>...</div>
 		</div>
-		<div class="task-bar-content">
+		<div class="task-card-content">
 			<div class="task-title">{{ title }}</div>
 			<div class="task-description">{{ description }}</div>
 		</div>
