@@ -1,0 +1,75 @@
+.sign-in-container {
+	width: 100%;
+	height: 100%;
+	padding: 0px 80px 30px 80px;
+
+	color: var(--color3);
+
+	@media #{$tablet} {
+		padding: 20px 20px 20px 20px;
+	}
+
+	@media #{$mobile} {
+		padding: 30px 30px 30px 30px;
+	}
+
+	> .current-page {
+		font-size: 26px;
+		text-transform: capitalize;
+		font-weight: bold;
+		width: fit-content;
+
+		@media #{$mobile} {
+			font-size: 26px;
+		}
+	}
+
+	> .modal-content {
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+
+		> form {
+			max-width: 200px;
+
+			text-align: left;
+
+			> label {
+				color: #aaa;
+				display: inline-block;
+				margin: 25px 0 5px;
+				font-size: 0.6em;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				font-weight: bold;
+			}
+
+			> input,
+			select {
+				display: block;
+				padding: 10px 6px;
+				width: 100%;
+				box-sizing: border-box;
+				border: none;
+				border-bottom: 1px solid #ddd;
+				color: #555;
+				font-weight: bold;
+				background-color: var(--color1);
+			}
+
+			> .submit {
+				text-align: center;
+
+				> button {
+					background: var(--color2);
+					border: 0;
+					padding: 10px 20px;
+					margin-top: 20px;
+					color: white;
+					border-radius: 20px;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}

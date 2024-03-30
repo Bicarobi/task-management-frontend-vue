@@ -1,15 +1,19 @@
 <template>
-	<form @submit.prevent="handleSubmit" v-on:keydown.enter.prevent>
-		<label>Username:</label>
-		<input type="text" required v-model="username" />
+	<div class="sign-up-container">
+		<div class="modal-content">
+			<form @submit.prevent="handleSubmit" v-on:keydown.enter.prevent>
+				<label>Username:</label>
+				<input type="text" required v-model="username" />
 
-		<label>Password:</label>
-		<input type="password" required v-model="password" />
+				<label>Password:</label>
+				<input type="password" required v-model="password" />
 
-		<div class="submit">
-			<button>Create an Account</button>
+				<div class="submit">
+					<button>Create an Account</button>
+				</div>
+			</form>
 		</div>
-	</form>
+	</div>
 </template>
 
 <script>

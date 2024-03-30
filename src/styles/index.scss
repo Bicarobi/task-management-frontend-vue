@@ -52,6 +52,8 @@ $desktop: "(min-width: 1201px)";
 @import "./views/AboutView";
 @import "./views/HomeView";
 @import "./views/Tasks";
+@import "./views/SignInView";
+@import "./views/SignUpView";
 
 @import "./components/NavBar";
 @import "./components/SettingsMenu";

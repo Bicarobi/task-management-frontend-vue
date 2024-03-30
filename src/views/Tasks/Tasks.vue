@@ -6,7 +6,7 @@
 			<div class="grid-left-side">
 				<div class="tasks-bar">
 					<div class="tasks-type">To Do</div>
-					<PlusIcon @click="openCreateTaskModal(true)" />
+					<PlusIcon @click="openCreateTaskModal(true, 'OPEN')" />
 					<!-- <OptionsMenu :optionsOpened="this.optionsOpened" @click="openOptions"><div>Edit</div></OptionsMenu> -->
 				</div>
 				<!-- <div v-for="task in toDoTasks" :key="task.id" class="task">
@@ -22,22 +22,26 @@
 			<div class="grid-middle">
 				<div class="tasks-bar">
 					<div class="tasks-type">In Progress</div>
-					<PlusIcon @click="openCreateTaskModal(true)" />
+					<PlusIcon @click="openCreateTaskModal(true, 'IN_PROGRESS')" />
 				</div>
 				<TaskCard v-for="task in inProgressTasks" :key="task.id" :title="task.title" :description="task.description" :status="task.status" />
 			</div>
 			<div class="grid-right-side">
 				<div class="tasks-bar">
 					<div class="tasks-type">Done</div>
-					<PlusIcon @click="openCreateTaskModal(true)" />
+					<PlusIcon @click="openCreateTaskModal(true, 'DONE')" />
 				</div>
 				<TaskCard v-for="task in doneTasks" :key="task.id" :title="task.title" :description="task.description" :status="task.status" />
 			</div>
 		</div>
 		<div v-else>
-			<p>No Tasks Found</p>
+			<div class="no-tasks-container">
+				<div>No Tasks Found</div>
+				<div>Create your first task!</div>
+				<PlusIcon @click="openCreateTaskModal(true, 'OPEN')" />
+			</div>
 		</div>
-		<CreateTaskModal v-show="this.$myGlobalVariable.username && this.createTaskModalOpened" @close-create-task-modal="fetchTasks(), openCreateTaskModal(false)" />
+		<CreateTaskModal v-show="this.$myGlobalVariable.username && this.createTaskModalOpened" @close-create-task-modal="fetchTasks(), openCreateTaskModal(false, '')" />
 		<!-- <TaskModal v-if="this.$myGlobalVariable.username && modalOpened == true" :title="modal.title" :description="modal.description" /> -->
 	</div>
 </template>
@@ -102,7 +106,7 @@ export default {
 		openOptions() {
 			this.optionsOpened = !this.optionsOpened;
 		},
-		openCreateTaskModal(isOpened) {
+		openCreateTaskModal(isOpened, status) {
 			this.createTaskModalOpened = isOpened;
 		},
 	},

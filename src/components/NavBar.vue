@@ -86,6 +86,8 @@ export default {
 			this.$myGlobalVariable.accessToken = "";
 			localStorage.accessToken = "";
 			localStorage.username = "";
+
+			this.$router.push({ name: "signIn" });
 		},
 	},
 	beforeMount() {

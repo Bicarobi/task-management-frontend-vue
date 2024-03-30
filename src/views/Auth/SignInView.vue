@@ -1,18 +1,20 @@
 <template>
-	<div v-if="!this.$myGlobalVariable.username">
-		<form @submit.prevent="handleSubmit" v-on:keydown.enter.prevent>
-			<label>Username:</label>
-			<input type="text" required v-model="username" />
+	<div class="sign-in-container">
+		<div class="modal-content" v-if="!this.$myGlobalVariable.username">
+			<form @submit.prevent="handleSubmit" v-on:keydown.enter.prevent>
+				<label>Username:</label>
+				<input type="text" required v-model="username" />
 
-			<label>Password:</label>
-			<input type="password" required v-model="password" />
+				<label>Password:</label>
+				<input type="password" required v-model="password" />
 
-			<div class="submit">
-				<button>Sign In</button>
-			</div>
-		</form>
+				<div class="submit">
+					<button>Sign In</button>
+				</div>
+			</form>
+		</div>
+		<div v-else>Already logged in!</div>
 	</div>
-	<div v-else>Already logged in!</div>
 </template>
 
 <script>
@@ -38,6 +40,7 @@ export default {
 					this.$myGlobalVariable.username = this.username;
 					localStorage.accessToken = this.$myGlobalVariable.accessToken;
 					localStorage.username = this.$myGlobalVariable.username;
+					this.$router.push({ name: "tasks" });
 				})
 				.then(console.log(this.$myGlobalVariable.accessToken, this.$myGlobalVariable.username));
 		},
