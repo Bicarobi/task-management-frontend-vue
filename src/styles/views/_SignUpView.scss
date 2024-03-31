@@ -6,11 +6,11 @@
 	color: var(--color3);
 
 	@media #{$tablet} {
-		padding: 20px 20px 20px 20px;
+		padding: 0px 100px 30px 100px;
 	}
 
 	@media #{$mobile} {
-		padding: 30px 30px 30px 30px;
+		padding: 0px 20px 30px 20px;
 	}
 
 	> .current-page {
@@ -38,6 +38,11 @@
 		box-shadow: 0px 6px 10px rgb(0 0 0 / 6%);
 
 		border-radius: 20px;
+
+		@media #{$mobile} {
+			margin: 50px auto 0 auto;
+			padding: 40px 40px;
+		}
 
 		> form {
 			max-width: 200px;
@@ -71,13 +76,21 @@
 				text-align: center;
 
 				> button {
-					background: var(--color2);
 					border: 0;
 					padding: 10px 20px;
 					margin-top: 20px;
-					color: white;
 					border-radius: 20px;
 					cursor: pointer;
+
+					@media #{$tablet} {
+						background-color: var(--color2);
+						color: white;
+					}
+				}
+
+				> button:hover {
+					background-color: var(--color2);
+					color: white;
 				}
 			}
 		}

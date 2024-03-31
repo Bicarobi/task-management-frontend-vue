@@ -3,14 +3,15 @@
 	height: 100%;
 	padding: 0px 160px 30px 160px;
 
+	text-align: justify;
 	color: var(--color3);
 
 	@media #{$tablet} {
-		padding: 20px 20px 20px 20px;
+		padding: 0px 100px 30px 100px;
 	}
 
 	@media #{$mobile} {
-		padding: 30px 30px 30px 30px;
+		padding: 0px 40px 30px 40px;
 	}
 
 	> .current-page {

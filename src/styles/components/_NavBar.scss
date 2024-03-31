@@ -5,15 +5,12 @@
 
 	width: 100%;
 
-	padding: 15px 5px 15px 30px;
+	padding: 15px 15px 15px 30px;
 
 	background-color: var(--color1);
 	box-shadow: 0px -10px 16px rgba(0, 0, 0, 0.1882352941);
 
 	z-index: 50;
-
-	@media #{$mobile} {
-	}
 
 	> .grid-container {
 		display: grid;
@@ -50,34 +47,78 @@
 			flex-direction: row;
 			align-items: center;
 			justify-content: flex-start;
-			gap: 20px;
 
-			> a {
-				font-weight: bold;
-				color: var(--color3);
-				text-decoration: none;
-			}
+			> .nav-bar-menu {
+				position: relative;
 
-			> a.router-link-exact-active {
-				color: var(--color2);
-			}
+				> .nav-bar-menu-content {
+					display: flex;
+					flex-wrap: wrap;
+					flex-direction: row;
+					align-items: center;
+					justify-content: flex-start;
+					gap: 20px;
 
-			> .username {
-				font-weight: bold;
-				color: var(--color3);
+					@media #{$tablet} {
+						position: absolute;
+						right: 0;
+						top: 30px;
+						display: flex;
+						flex-wrap: wrap;
+						flex-direction: column;
+						align-items: flex-start;
+						justify-content: flex-start;
+						gap: 10px;
 
-				margin-left: 50px;
-			}
+						padding: 20px;
+						border-radius: 15px 0 15px 15px;
+						background-color: var(--color6);
+						box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.05);
+					}
 
-			> button {
-				padding: 5px 10px;
-				border: none;
-				border-radius: 20px;
-				cursor: pointer;
-			}
+					> a {
+						font-weight: bold;
+						color: var(--color3);
+						text-decoration: none;
+					}
 
-			> button:hover {
-				background-color: var(--color2);
+					> a.router-link-exact-active {
+						color: var(--color2);
+					}
+
+					> .username {
+						font-weight: bold;
+						color: var(--color3);
+
+						margin-left: 50px;
+
+						@media #{$tablet} {
+							margin-left: 0px;
+						}
+					}
+
+					> button {
+						padding: 5px 10px;
+						border: none;
+						border-radius: 20px;
+						cursor: pointer;
+					}
+
+					> button:hover {
+						background-color: var(--color2);
+						color: white;
+					}
+
+					> .locale-changer {
+						select {
+							background-color: #f0f0f0;
+
+							border: none;
+							border-radius: 20px;
+							padding: 4px 5px;
+						}
+					}
+				}
 			}
 		}
 	}

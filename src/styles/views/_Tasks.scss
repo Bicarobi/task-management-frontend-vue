@@ -1,16 +1,16 @@
 .tasks-container {
 	width: 100%;
 	height: 100%;
-	padding: 0px 160px 30px 160px;
+	padding: 0px 80px 30px 80px;
 
 	color: var(--color3);
 
 	@media #{$tablet} {
-		padding: 20px 20px 20px 20px;
+		padding: 0px 40px 30px 40px;
 	}
 
 	@media #{$mobile} {
-		padding: 30px 30px 30px 30px;
+		padding: 0px 20px 30px 20px;
 	}
 
 	> .current-page {
@@ -22,6 +22,7 @@
 
 		@media #{$mobile} {
 			font-size: 26px;
+			padding-left: 20px;
 		}
 	}
 
@@ -33,6 +34,12 @@
 		justify-items: center;
 
 		gap: 20px;
+
+		@media #{$mobile} {
+			grid-template-columns: 1fr;
+			grid-template-rows: auto;
+			grid-template-areas: "left-side" "middle" "right-side";
+		}
 
 		> .grid-left-side {
 			grid-area: left-side;
@@ -46,7 +53,7 @@
 			flex-wrap: wrap;
 
 			padding: 20px;
-			background-color: var(--color4);
+			background-color: var(--color1);
 			border-radius: 15px;
 
 			> .tasks-bar {
@@ -77,7 +84,7 @@
 			flex-wrap: wrap;
 
 			padding: 20px;
-			background-color: var(--color4);
+			background-color: var(--color1);
 			border-radius: 15px;
 
 			> .tasks-bar {
@@ -108,7 +115,7 @@
 			flex-wrap: wrap;
 
 			padding: 20px;
-			background-color: var(--color4);
+			background-color: var(--color1);
 			border-radius: 15px;
 
 			> .tasks-bar {

@@ -10,6 +10,7 @@ app.config.globalProperties.$myGlobalVariable = reactive({
 	accessToken: "",
 	username: "",
 	windowWidth: null,
+	tabletWindowWidth: 1200,
 	mobileWindowWidth: 700,
 });
 
