@@ -36,7 +36,7 @@
 .about-container {
   width: 100%;
   height: 100%;
-  padding: 0px 80px 30px 80px;
+  padding: 0px 160px 30px 160px;
   color: var(--color3);
 }
 @media (max-width: 1200px) {
@@ -65,7 +65,7 @@
 .home-container {
   width: 100%;
   height: 100%;
-  padding: 0px 80px 30px 80px;
+  padding: 0px 160px 30px 160px;
   color: var(--color3);
 }
 @media (max-width: 1200px) {
@@ -94,7 +94,7 @@
 .tasks-container {
   width: 100%;
   height: 100%;
-  padding: 0px 80px 30px 80px;
+  padding: 0px 160px 30px 160px;
   color: var(--color3);
 }
 @media (max-width: 1200px) {
@@ -113,6 +113,7 @@
   font-weight: bold;
   width: -moz-fit-content;
   width: fit-content;
+  margin-bottom: 20px;
 }
 @media (max-width: 700px) {
   .tasks-container > .current-page {
@@ -196,6 +197,19 @@
   font-weight: bold;
   margin-right: auto;
 }
+.tasks-container > .no-tasks-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  font-size: 20px;
+}
+.tasks-container > .no-tasks-container > .create-task-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
 
 .sign-in-container {
   width: 100%;
@@ -226,16 +240,25 @@
   }
 }
 .sign-in-container > .modal-content {
+  width: -moz-max-content;
+  width: max-content;
+  height: -moz-max-content;
+  height: max-content;
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  margin: 100px auto 0 auto;
+  padding: 40px 80px;
+  background-color: var(--color1);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
 }
 .sign-in-container > .modal-content > form {
   max-width: 200px;
   text-align: left;
 }
 .sign-in-container > .modal-content > form > label {
-  color: #aaa;
+  color: var(--color3);
   display: inline-block;
   margin: 25px 0 5px;
   font-size: 0.6em;
@@ -250,8 +273,8 @@
   width: 100%;
   box-sizing: border-box;
   border: none;
-  border-bottom: 1px solid #ddd;
-  color: #555;
+  border-bottom: 1px solid var(--color3);
+  color: var(--color3);
   font-weight: bold;
   background-color: var(--color1);
 }
@@ -297,9 +320,18 @@
   }
 }
 .sign-up-container > .modal-content {
+  width: -moz-max-content;
+  width: max-content;
+  height: -moz-max-content;
+  height: max-content;
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  margin: 100px auto 0 auto;
+  padding: 40px 80px;
+  background-color: var(--color1);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
 }
 .sign-up-container > .modal-content > form {
   max-width: 200px;
@@ -322,7 +354,7 @@
   box-sizing: border-box;
   border: none;
   border-bottom: 1px solid var(--color3);
-  color: #555;
+  color: var(--color3);
   font-weight: bold;
   background-color: var(--color1);
 }
@@ -399,6 +431,9 @@
   border-radius: 20px;
   cursor: pointer;
 }
+.navbar-container > .grid-container > .grid-right-side > button:hover {
+  background-color: var(--color2);
+}
 
 .settings-menu-container {
   position: fixed;
@@ -442,7 +477,7 @@
   height: -moz-max-content;
   height: max-content;
   border-radius: 10px;
-  padding: 5px 20px 20px 20px;
+  padding: 10px 20px 20px 20px;
   margin-bottom: 20px;
   color: var(--color3);
   background-color: var(--color1);
@@ -473,15 +508,25 @@
   position: absolute;
   top: 25px;
   right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
   width: -moz-max-content;
   width: max-content;
   height: -moz-max-content;
   height: max-content;
   border-radius: 10px;
   padding: 10px;
-  color: var(--color3);
-  background-color: var(--color1);
+  background-color: var(--color4);
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.05);
+}
+.options-menu-container > .options > div {
+  color: var(--color3);
+  cursor: pointer;
+}
+.options-menu-container > .options > div:hover {
+  color: var(--color2);
 }
 
 .create-task-modal-container {
@@ -501,7 +546,7 @@
   text-align: left;
 }
 .create-task-modal-container > .modal-content > form > label {
-  color: #aaa;
+  color: var(--color3);
   display: inline-block;
   margin: 25px 0 5px;
   font-size: 0.6em;
@@ -516,8 +561,8 @@
   width: 100%;
   box-sizing: border-box;
   border: none;
-  border-bottom: 1px solid #ddd;
-  color: #555;
+  border-bottom: 1px solid var(--color3);
+  color: var(--color3);
   font-weight: bold;
   background-color: var(--color1);
 }
@@ -525,6 +570,56 @@
   text-align: center;
 }
 .create-task-modal-container > .modal-content > form > .submit > button {
+  background: var(--color2);
+  border: 0;
+  padding: 10px 20px;
+  margin-top: 20px;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.edit-task-modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 30;
+  max-width: 420px;
+  border-radius: 10px;
+  padding: 10px 40px 20px 40px;
+  color: var(--color3);
+  background-color: var(--color1);
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.05);
+}
+.edit-task-modal-container > .modal-content > form {
+  text-align: left;
+}
+.edit-task-modal-container > .modal-content > form > label {
+  color: var(--color3);
+  display: inline-block;
+  margin: 25px 0 5px;
+  font-size: 0.6em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.edit-task-modal-container > .modal-content > form > input,
+.edit-task-modal-container > .modal-content > form select {
+  display: block;
+  padding: 10px 6px;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid var(--color3);
+  color: var(--color3);
+  font-weight: bold;
+  background-color: var(--color1);
+}
+.edit-task-modal-container > .modal-content > form > .submit {
+  text-align: center;
+}
+.edit-task-modal-container > .modal-content > form > .submit > button {
   background: var(--color2);
   border: 0;
   padding: 10px 20px;

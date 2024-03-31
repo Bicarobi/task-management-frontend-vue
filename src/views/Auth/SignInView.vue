@@ -26,23 +26,24 @@ export default {
 		};
 	},
 	methods: {
-		handleSubmit() {
+		async handleSubmit() {
 			const requestOptions = {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ username: this.username, password: this.password }),
 			};
 
-			fetch(process.env.VUE_APP_BASE_URL + "/auth/signin", requestOptions)
+			await fetch(process.env.VUE_APP_BASE_URL + "/auth/signin", requestOptions)
 				.then((res) => res.json())
 				.then((data) => {
 					this.$myGlobalVariable.accessToken = data.accessToken;
 					this.$myGlobalVariable.username = this.username;
 					localStorage.accessToken = this.$myGlobalVariable.accessToken;
 					localStorage.username = this.$myGlobalVariable.username;
-					this.$router.push({ name: "tasks" });
 				})
-				.then(console.log(this.$myGlobalVariable.accessToken, this.$myGlobalVariable.username));
+				.then(console.log(this.$myGlobalVariable.username));
+
+			this.$router.push({ name: "tasks" });
 		},
 	},
 };

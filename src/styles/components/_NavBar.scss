@@ -75,6 +75,10 @@
 				border-radius: 20px;
 				cursor: pointer;
 			}
+
+			> button:hover {
+				background-color: var(--color2);
+			}
 		}
 	}
 }

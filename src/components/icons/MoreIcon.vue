@@ -16,6 +16,12 @@ div {
 	cursor: pointer;
 }
 
+div:hover {
+	path {
+		fill: var(--color2);
+	}
+}
+
 svg {
 	height: 20px;
 }

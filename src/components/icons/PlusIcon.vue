@@ -22,6 +22,12 @@ div {
 	position: relative;
 }
 
+div:hover {
+	path {
+		fill: var(--color2);
+	}
+}
+
 svg {
 	height: 20px;
 }

@@ -39,16 +39,16 @@ export default {
 		};
 	},
 	methods: {
-		handleSubmit() {
+		async handleSubmit() {
 			const requestOptions = {
 				method: "POST",
 				headers: { "Content-Type": "application/json", Authorization: "Bearer " + this.$myGlobalVariable.accessToken },
 				body: JSON.stringify({ title: this.title, description: this.description, status: this.status }),
 			};
 
-			fetch(process.env.VUE_APP_BASE_URL + "/tasks", requestOptions)
-				.then((res) => console.log(res.json()))
-				.then(this.$emit("close-create-task-modal"));
+			await fetch(process.env.VUE_APP_BASE_URL + "/tasks", requestOptions).then((res) => console.log(res.json()));
+
+			this.$emit("close-create-task-modal");
 		},
 	},
 };

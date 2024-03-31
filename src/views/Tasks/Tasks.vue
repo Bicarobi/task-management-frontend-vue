@@ -6,8 +6,7 @@
 			<div class="grid-left-side">
 				<div class="tasks-bar">
 					<div class="tasks-type">To Do</div>
-					<PlusIcon @click="openCreateTaskModal(true, 'OPEN')" />
-					<!-- <OptionsMenu :optionsOpened="this.optionsOpened" @click="openOptions"><div>Edit</div></OptionsMenu> -->
+					<PlusIcon @click="openCreateTaskModal(true)" />
 				</div>
 				<!-- <div v-for="task in toDoTasks" :key="task.id" class="task">
 					<router-link :to="{ name: 'taskDetails', params: { id: task.id } }">
@@ -17,31 +16,66 @@
 					</router-link>
 					@click="openModal(task.title, task.description)"
 				</div> -->
-				<TaskCard v-for="task in toDoTasks" :key="task.id" :title="task.title" :description="task.description" :status="task.status" />
+				<TaskCard
+					v-for="task in toDoTasks"
+					:key="task.id"
+					:id="task.id"
+					:title="task.title"
+					:description="task.description"
+					:status="task.status"
+					@deleted-task="fetchTasks"
+					@edit-task-modal-data="editTaskModalData(task.id, task.title, task.description, task.status)"
+				/>
 			</div>
 			<div class="grid-middle">
 				<div class="tasks-bar">
 					<div class="tasks-type">In Progress</div>
-					<PlusIcon @click="openCreateTaskModal(true, 'IN_PROGRESS')" />
+					<PlusIcon @click="openCreateTaskModal(true)" />
 				</div>
-				<TaskCard v-for="task in inProgressTasks" :key="task.id" :title="task.title" :description="task.description" :status="task.status" />
+				<TaskCard
+					v-for="task in inProgressTasks"
+					:key="task.id"
+					:id="task.id"
+					:title="task.title"
+					:description="task.description"
+					:status="task.status"
+					@deleted-task="fetchTasks"
+					@edit-task-modal-data="editTaskModalData(task.id, task.title, task.description, task.status)"
+				/>
 			</div>
 			<div class="grid-right-side">
 				<div class="tasks-bar">
 					<div class="tasks-type">Done</div>
-					<PlusIcon @click="openCreateTaskModal(true, 'DONE')" />
+					<PlusIcon @click="openCreateTaskModal(true)" />
 				</div>
-				<TaskCard v-for="task in doneTasks" :key="task.id" :title="task.title" :description="task.description" :status="task.status" />
+				<TaskCard
+					v-for="task in doneTasks"
+					:key="task.id"
+					:id="task.id"
+					:title="task.title"
+					:description="task.description"
+					:status="task.status"
+					@deleted-task="fetchTasks"
+					@edit-task-modal-data="editTaskModalData(task.id, task.title, task.description, task.status)"
+				/>
 			</div>
 		</div>
-		<div v-else>
-			<div class="no-tasks-container">
-				<div>No Tasks Found</div>
+		<div class="no-tasks-container" v-else>
+			<div>No Tasks Found</div>
+			<div class="create-task-container">
 				<div>Create your first task!</div>
-				<PlusIcon @click="openCreateTaskModal(true, 'OPEN')" />
+				<PlusIcon @click="openCreateTaskModal(true)" />
 			</div>
 		</div>
-		<CreateTaskModal v-show="this.$myGlobalVariable.username && this.createTaskModalOpened" @close-create-task-modal="fetchTasks(), openCreateTaskModal(false, '')" />
+		<CreateTaskModal v-if="this.$myGlobalVariable.username && this.createTaskModalOpened" @close-create-task-modal="fetchTasks(), openCreateTaskModal(false)" />
+		<EditTaskModal
+			v-if="this.$myGlobalVariable.username && this.editTaskModalOpened"
+			@close-edit-task-modal="fetchTasks(), openEditTaskModal(false)"
+			:id="this.editTaskId"
+			:title="this.editTaskTitle"
+			:description="this.editTaskDescription"
+			:status="this.editTaskStatus"
+		/>
 		<!-- <TaskModal v-if="this.$myGlobalVariable.username && modalOpened == true" :title="modal.title" :description="modal.description" /> -->
 	</div>
 </template>
@@ -49,28 +83,31 @@
 <script>
 import TaskCard from "../../components/TaskCard.vue";
 import TaskModal from "../../components/TaskModal.vue";
-import OptionsMenu from "../../components/OptionsMenu.vue";
 import CreateTaskModal from "../../components/CreateTaskModal.vue";
+import EditTaskModal from "../../components/EditTaskModal.vue";
 
 import PlusIcon from "../../components/icons/PlusIcon.vue";
-import MoreIcon from "../../components/icons/MoreIcon.vue";
 
 export default {
 	name: "Tasks",
 	components: {
 		TaskCard,
 		TaskModal,
-		OptionsMenu,
 		CreateTaskModal,
+		EditTaskModal,
 		PlusIcon,
-		MoreIcon,
 	},
 	data() {
 		return {
 			tasks: [],
 			modalOpened: false,
-			optionsOpened: false,
 			createTaskModalOpened: false,
+			editTaskModalOpened: false,
+			editTaskId: null,
+			editTaskTitle: null,
+			editDescriptionId: null,
+			editStatusId: null,
+
 			modal: { title: "", description: "" },
 		};
 	},
@@ -89,12 +126,11 @@ export default {
 		this.fetchTasks();
 	},
 	methods: {
-		fetchTasks() {
+		async fetchTasks() {
 			if (this.$myGlobalVariable.accessToken) {
 				fetch(process.env.VUE_APP_BASE_URL + "/tasks", { headers: { Authorization: "Bearer " + this.$myGlobalVariable.accessToken } })
 					.then((res) => res.json())
 					.then((data) => (this.tasks = data))
-					.then(console.log(""))
 					.catch((err) => console.log(err.message));
 			}
 		},
@@ -103,11 +139,18 @@ export default {
 			this.modal.title = title;
 			this.modal.description = description;
 		},
-		openOptions() {
-			this.optionsOpened = !this.optionsOpened;
-		},
-		openCreateTaskModal(isOpened, status) {
+		openCreateTaskModal(isOpened) {
 			this.createTaskModalOpened = isOpened;
+		},
+		editTaskModalData(id, title, description, status) {
+			this.editTaskId = id;
+			this.editTaskTitle = title;
+			this.editTaskDescription = description;
+			this.editTaskStatus = status;
+			this.openEditTaskModal(true);
+		},
+		openEditTaskModal(isOpened) {
+			this.editTaskModalOpened = isOpened;
 		},
 	},
 };

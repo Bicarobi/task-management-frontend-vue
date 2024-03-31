@@ -61,6 +61,7 @@ $desktop: "(min-width: 1201px)";
 @import "./components/TaskCard";
 @import "./components/OptionsMenu";
 @import "./components/CreateTaskModal";
+@import "./components/EditTaskModal";
 
 body {
 	background-color: var(--color1);
