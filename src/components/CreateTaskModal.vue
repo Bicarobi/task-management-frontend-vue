@@ -1,12 +1,19 @@
 <template>
 	<div class="create-task-modal-container">
 		<div class="modal-content" v-if="this.$myGlobalVariable.username">
-			<form @submit.prevent="handleSubmit" v-on:keydown.enter.prevent>
+			<form @submit.prevent="handleSubmit">
 				<label>Title:</label>
 				<input type="text" required v-model="title" />
 
 				<label>Description:</label>
-				<input type="text" required v-model="description" />
+				<textarea
+					type="text"
+					onfocus='this.style.height = "";this.style.height = this.scrollHeight + "px"'
+					onfocusout='this.style.height = "";'
+					oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
+					required
+					v-model="description"
+				></textarea>
 
 				<label>Status:</label>
 				<select required v-model="status">

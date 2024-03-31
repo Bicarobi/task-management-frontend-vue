@@ -40,10 +40,19 @@ export default {
 					this.$myGlobalVariable.username = this.username;
 					localStorage.accessToken = this.$myGlobalVariable.accessToken;
 					localStorage.username = this.$myGlobalVariable.username;
+					setTimeout(this.logOut, 3600000);
 				})
 				.then(console.log(this.$myGlobalVariable.username));
 
 			this.$router.push({ name: "tasks" });
+		},
+		logOut() {
+			this.$myGlobalVariable.username = "";
+			this.$myGlobalVariable.accessToken = "";
+			localStorage.accessToken = "";
+			localStorage.username = "";
+
+			this.$router.push({ name: "signIn" });
 		},
 	},
 };
