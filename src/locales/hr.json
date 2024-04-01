@@ -1,7 +1,6 @@
 {
-	"navbar": {},
 	"user-auth": {
-		"username": "Korisnički račun",
+		"username": "Korisničko ime",
 		"password": "Lozinka",
 		"sign-in": "Prijavi se",
 		"sign-up": "Izradi račun",
@@ -9,6 +8,13 @@
 		"create-account": "Izradi račun",
 		"logged-in": "Već si ulogiran!",
 		"not-logged-in": "Not logged in!"
+	},
+	"navbar": {},
+	"popup": {
+		"username-exists": "Korisničko ime već postoji!",
+		"account-created": "Korisnički račun je napravljen!",
+		"username-weak": "Korisničko ime mora sadržavati između 3 i 20 znakova!",
+		"password-weak": "Lozinka mora sadržavati najmanje 8 znakova i barem 1 broj"
 	},
 	"home-view": {
 		"current-page": "Početna",

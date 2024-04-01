@@ -1,5 +1,4 @@
 {
-	"navbar": {},
 	"user-auth": {
 		"username": "Username",
 		"password": "Password",
@@ -9,6 +8,13 @@
 		"create-account": "Create an Account",
 		"logged-in": "Already logged in!",
 		"not-logged-in": "Not logged in!"
+	},
+	"navbar": {},
+	"popup": {
+		"username-exists": "Username already exists!",
+		"account-created": "User account has been made!",
+		"username-weak": "Username must be between 3 and 20 characters long!",
+		"password-weak": "Password must be at least 8 characters long and contain 1 number!"
 	},
 	"home-view": {
 		"current-page": "Home",
