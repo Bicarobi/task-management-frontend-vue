@@ -473,6 +473,8 @@
   align-items: center;
   justify-content: flex-start;
   gap: 20px;
+  width: -moz-max-content;
+  width: max-content;
 }
 @media (max-width: 1200px) {
   .navbar-container > .grid-container > .grid-right-side > .nav-bar-menu > .nav-bar-menu-content {

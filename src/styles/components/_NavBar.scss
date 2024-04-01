@@ -66,6 +66,7 @@
 					align-items: center;
 					justify-content: flex-start;
 					gap: 20px;
+					width: max-content;
 
 					@media #{$tablet} {
 						position: absolute;
