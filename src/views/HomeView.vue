@@ -1,12 +1,8 @@
 <template>
 	<div class="home-container">
-		<div class="current-page">Home</div>
+		<div class="current-page">{{ $t("home-view.current-page") }}</div>
 		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste officiis mollitia voluptatibus et, veniam nobis assumenda ut blanditiis quod quisquam odit optio dignissimos nulla pariatur ad
-			dolores, eligendi asperiores, obcaecati perferendis. Nihil dicta veniam in quae beatae mollitia, ullam tempora accusantium quos. Sequi facilis dolores architecto a optio sint eaque
-			temporibus labore blanditiis explicabo animi ipsa fugiat distinctio quasi dolor consectetur, minima atque est! Dolore voluptatem adipisci aliquid, quo quibusdam et quasi fugit possimus,
-			accusamus in molestias recusandae doloribus ipsam dicta dolorem enim tempora deserunt totam tenetur sapiente minus non ullam architecto autem! Rerum vero quis adipisci nihil? Repudiandae,
-			quas.
+			{{ $t("home-view.text") }}
 		</p>
 		<p>
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste officiis mollitia voluptatibus et, veniam nobis assumenda ut blanditiis quod quisquam odit optio dignissimos nulla pariatur ad

@@ -2,8 +2,8 @@
 	<div class="task-card-container">
 		<div class="task-card-bar">
 			<OptionsMenu :optionsOpened="this.optionsOpened" @click="openOptions">
-				<div @click="this.$emit('edit-task-modal-data')">Edit</div>
-				<div @click="deleteTask(id)">Delete</div>
+				<div @click="this.$emit('edit-task-modal-data')">{{ $t("tasks.modal.edit") }}</div>
+				<div @click="deleteTask(id)">{{ $t("tasks.modal.delete") }}</div>
 			</OptionsMenu>
 		</div>
 		<div class="task-card-content">

@@ -2,14 +2,14 @@
 	<div class="sign-up-container">
 		<div class="modal-content">
 			<form @submit.prevent="handleSubmit" v-on:keydown.enter.prevent>
-				<label>Username:</label>
+				<label>{{ $t("user-auth.username") }}:</label>
 				<input type="text" required v-model="username" />
 
-				<label>Password:</label>
+				<label>{{ $t("user-auth.password") }}:</label>
 				<input type="password" required v-model="password" />
 
 				<div class="submit">
-					<button>Create an Account</button>
+					<button>{{ $t("user-auth.create-account") }}</button>
 				</div>
 			</form>
 		</div>

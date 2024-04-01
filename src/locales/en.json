@@ -1,3 +1,40 @@
 {
-	"message": "hello i18n !!"
+	"navbar": {},
+	"user-auth": {
+		"username": "Username",
+		"password": "Password",
+		"sign-in": "Sign In",
+		"sign-up": "Sign Up",
+		"sign-out": "Sign Out",
+		"create-account": "Create an Account",
+		"logged-in": "Already logged in!",
+		"not-logged-in": "Not logged in!"
+	},
+	"home-view": {
+		"current-page": "Home",
+		"text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste officiis mollitia voluptatibus et, veniam nobis assumenda ut blanditiis quod quisquam odit optio dignissimos nulla pariatur ad dolores, eligendi asperiores, obcaecati perferendis. Nihil dicta veniam in quae beatae mollitia, ullam tempora accusantium quos. Sequi facilis dolores architecto a optio sint eaque temporibus labore blanditiis explicabo animi ipsa fugiat distinctio quasi dolor consectetur, minima atque est! Dolore voluptatem adipisci aliquid, quo quibusdam et quasi fugit possimus, accusamus in molestias recusandae doloribus ipsam dicta dolorem enim tempora deserunt totam tenetur sapiente minus non ullam architecto autem! Rerum vero quis adipisci nihil? Repudiandae, quas."
+	},
+	"about-view": {
+		"current-page": "About",
+		"text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste officiis mollitia voluptatibus et, veniam nobis assumenda ut blanditiis quod quisquam odit optio dignissimos nulla pariatur ad dolores, eligendi asperiores, obcaecati perferendis. Nihil dicta veniam in quae beatae mollitia, ullam tempora accusantium quos. Sequi facilis dolores architecto a optio sint eaque temporibus labore blanditiis explicabo animi ipsa fugiat distinctio quasi dolor consectetur, minima atque est! Dolore voluptatem adipisci aliquid, quo quibusdam et quasi fugit possimus, accusamus in molestias recusandae doloribus ipsam dicta dolorem enim tempora deserunt totam tenetur sapiente minus non ullam architecto autem! Rerum vero quis adipisci nihil? Repudiandae, quas."
+	},
+	"tasks": {
+		"current-page": "Tasks",
+		"type": {
+			"to-do": "To Do",
+			"in-progress": "In Progress",
+			"done": "Done"
+		},
+		"modal": {
+			"edit": "Edit",
+			"delete": "Delete",
+			"create-task": "Create a Task",
+			"confirm-task": "Confirm Changes",
+			"title": "Title",
+			"description": "Description",
+			"status": "Status"
+		},
+		"no-task-found": "No tasks found",
+		"first-task": "Create your first task!"
+	}
 }

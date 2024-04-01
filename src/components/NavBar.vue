@@ -12,10 +12,11 @@
 						:navbarMenuOpened="this.navbarMenuOpened"
 					/>
 					<div class="nav-bar-menu-content" v-show="this.$myGlobalVariable.windowWidth > this.$myGlobalVariable.tabletWindowWidth || this.navbarMenuOpened">
-						<router-link to="/" @click="openNavbarMenu(false, false)">Home</router-link>
-						<router-link :to="{ name: 'about' }" @click="openNavbarMenu(false, false)">About</router-link>
+						<router-link to="/" @click="openNavbarMenu(false, false)">{{ $t("home-view.current-page") }}</router-link>
 
-						<router-link :to="{ name: 'tasks' }" v-if="this.$myGlobalVariable.username" @click="openNavbarMenu(false, false)">Tasks</router-link>
+						<!-- <router-link :to="{ name: 'about' }" @click="openNavbarMenu(false, false)">About</router-link> -->
+
+						<router-link :to="{ name: 'tasks' }" v-if="this.$myGlobalVariable.username" @click="openNavbarMenu(false, false)">{{ $t("tasks.current-page") }}</router-link>
 						<!-- <router-link :to="{ name: 'createTask' }">Create a Task</router-link>
 					<router-link :to="{ name: 'deleteTask' }">Delete a Task</router-link> -->
 
@@ -30,10 +31,11 @@
 						<!-- <SettingsIcon @click="openSettings(false, false)" v-if="this.$myGlobalVariable.username" />
 
 				<SettingsMenu v-if="this.$myGlobalVariable.username && this.settingsMenuOpened" @close-menu="openSettings(true, false)" /> -->
-						<button @click="logOut" v-if="this.$myGlobalVariable.username">Sign Out</button>
+						<button @click="logOut" v-if="this.$myGlobalVariable.username">{{ $t("user-auth.sign-out") }}</button>
 
-						<router-link :to="{ name: 'signIn' }" v-if="!this.$myGlobalVariable.username" @click="openNavbarMenu(false, false)">Sign In</router-link>
-						<router-link :to="{ name: 'signUp' }" v-if="!this.$myGlobalVariable.username" @click="openNavbarMenu(false, false)">Sign Up</router-link>
+						<router-link :to="{ name: 'signIn' }" v-if="!this.$myGlobalVariable.username" @click="openNavbarMenu(false, false)">{{ $t("user-auth.sign-in") }}</router-link>
+
+						<router-link :to="{ name: 'signUp' }" v-if="!this.$myGlobalVariable.username" @click="openNavbarMenu(false, false)">{{ $t("user-auth.sign-up") }}</router-link>
 
 						<div class="locale-changer">
 							<select v-model="$i18n.locale">

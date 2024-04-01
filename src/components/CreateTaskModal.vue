@@ -2,10 +2,10 @@
 	<div class="create-task-modal-container">
 		<div class="modal-content" v-if="this.$myGlobalVariable.username">
 			<form @submit.prevent="handleSubmit">
-				<label>Title:</label>
+				<label>{{ $t("tasks.modal.title") }}:</label>
 				<input type="text" required v-model="title" />
 
-				<label>Description:</label>
+				<label>{{ $t("tasks.modal.description") }}:</label>
 				<textarea
 					type="text"
 					onfocus='this.style.height = "";this.style.height = this.scrollHeight + "px"'
@@ -15,19 +15,19 @@
 					v-model="description"
 				></textarea>
 
-				<label>Status:</label>
+				<label>{{ $t("tasks.modal.status") }}:</label>
 				<select required v-model="status">
-					<option value="OPEN">Open</option>
-					<option value="IN_PROGRESS">In Progress</option>
-					<option value="DONE">Done</option>
+					<option value="OPEN">{{ $t("tasks.type.to-do") }}</option>
+					<option value="IN_PROGRESS">{{ $t("tasks.type.in-progress") }}</option>
+					<option value="DONE">{{ $t("tasks.type.done") }}</option>
 				</select>
 
 				<div class="submit">
-					<button>Create a Task</button>
+					<button>{{ $t("tasks.modal.create-task") }}</button>
 				</div>
 			</form>
 		</div>
-		<div v-else>Not logged in!</div>
+		<div v-else>{{ $t("user-auth.not-logged-in") }}</div>
 		<CloseIcon @click="this.$emit('close-create-task-modal')" />
 	</div>
 </template>

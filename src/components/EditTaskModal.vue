@@ -2,10 +2,10 @@
 	<div class="edit-task-modal-container">
 		<div class="modal-content" v-if="this.$myGlobalVariable.username">
 			<form @submit.prevent="handleSubmit">
-				<label>Title:</label>
+				<label>{{ $t("tasks.modal.title") }}:</label>
 				<input type="text" required v-model="editTitle" />
 
-				<label>Description:</label>
+				<label>{{ $t("tasks.modal.description") }}:</label>
 				<textarea
 					type="text"
 					onfocus='this.style.height = "";this.style.height = this.scrollHeight + "px"'
@@ -15,19 +15,19 @@
 					v-model="editDescription"
 				></textarea>
 
-				<label>Status:</label>
+				<label>{{ $t("tasks.modal.status") }}:</label>
 				<select required v-model="editStatus">
-					<option value="OPEN">Open</option>
-					<option value="IN_PROGRESS">In Progress</option>
-					<option value="DONE">Done</option>
+					<option value="OPEN">{{ $t("tasks.type.to-do") }}</option>
+					<option value="IN_PROGRESS">{{ $t("tasks.type.in-progress") }}</option>
+					<option value="DONE">{{ $t("tasks.type.done") }}</option>
 				</select>
 
 				<div class="submit">
-					<button>Confirm Changes</button>
+					<button>{{ $t("tasks.modal.confirm-task") }}</button>
 				</div>
 			</form>
 		</div>
-		<div v-else>Not logged in!</div>
+		<div v-else>{{ $t("user-auth.not-logged-in") }}!</div>
 		<CloseIcon @click="this.$emit('close-edit-task-modal')" />
 	</div>
 </template>

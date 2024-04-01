@@ -2,18 +2,18 @@
 	<div class="sign-in-container">
 		<div class="modal-content" v-if="!this.$myGlobalVariable.username">
 			<form @submit.prevent="handleSubmit" v-on:keydown.enter.prevent>
-				<label>Username:</label>
+				<label>{{ $t("user-auth.username") }}:</label>
 				<input type="text" required v-model="username" />
 
-				<label>Password:</label>
+				<label>{{ $t("user-auth.password") }}:</label>
 				<input type="password" required v-model="password" />
 
 				<div class="submit">
-					<button>Sign In</button>
+					<button>{{ $t("user-auth.sign-in") }}</button>
 				</div>
 			</form>
 		</div>
-		<div v-else>Already logged in!</div>
+		<div v-else>{{ $t("user-auth.logged-in") }}!</div>
 	</div>
 </template>
 

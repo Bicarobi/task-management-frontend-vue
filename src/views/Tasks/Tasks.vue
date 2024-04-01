@@ -1,11 +1,11 @@
 <template>
 	<div class="tasks-container">
-		<div class="current-page">Tasks</div>
-		<div v-if="!this.$myGlobalVariable.username">Not logged in!</div>
+		<div class="current-page">{{ $t("tasks.current-page") }}</div>
+		<div v-if="!this.$myGlobalVariable.username">{{ $t("user-auth.not-logged-in") }}!</div>
 		<div class="grid-container" v-else-if="tasks.length">
 			<div class="grid-left-side">
 				<div class="tasks-bar">
-					<div class="tasks-type">To Do</div>
+					<div class="tasks-type">{{ $t("tasks.type.to-do") }}</div>
 					<PlusIcon @click="openCreateTaskModal(true)" />
 				</div>
 				<!-- <div v-for="task in toDoTasks" :key="task.id" class="task">
@@ -29,7 +29,7 @@
 			</div>
 			<div class="grid-middle">
 				<div class="tasks-bar">
-					<div class="tasks-type">In Progress</div>
+					<div class="tasks-type">{{ $t("tasks.type.in-progress") }}</div>
 					<PlusIcon @click="openCreateTaskModal(true)" />
 				</div>
 				<TaskCard
@@ -45,7 +45,7 @@
 			</div>
 			<div class="grid-right-side">
 				<div class="tasks-bar">
-					<div class="tasks-type">Done</div>
+					<div class="tasks-type">{{ $t("tasks.type.done") }}</div>
 					<PlusIcon @click="openCreateTaskModal(true)" />
 				</div>
 				<TaskCard
@@ -61,9 +61,9 @@
 			</div>
 		</div>
 		<div class="no-tasks-container" v-else>
-			<div>No Tasks Found</div>
+			<div>{{ $t("tasks.no-task-found") }}</div>
 			<div class="create-task-container">
-				<div>Create your first task!</div>
+				<div>{{ $t("tasks.first-task") }}!</div>
 				<PlusIcon @click="openCreateTaskModal(true)" />
 			</div>
 		</div>
