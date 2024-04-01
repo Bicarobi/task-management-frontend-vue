@@ -29,4 +29,12 @@ svg {
 path {
 	fill: var(--color3);
 }
+
+@media only screen and (max-width: 1200px) {
+	div:hover {
+		path {
+			fill: var(--color3);
+		}
+	}
+}
 </style>

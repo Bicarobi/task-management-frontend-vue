@@ -14,7 +14,7 @@
 		width: max-content;
 		height: max-content;
 
-		border-radius: 10px;
+		border-radius: 10px 0 10px 10px;
 		padding: 10px;
 
 		background-color: var(--color1);
@@ -27,7 +27,9 @@
 		}
 
 		> div:hover {
-			color: var(--color2);
+			@media #{$mobile} {
+				color: var(--color2);
+			}
 		}
 	}
 }

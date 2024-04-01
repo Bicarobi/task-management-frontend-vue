@@ -33,4 +33,11 @@ svg {
 path {
 	fill: var(--color2);
 }
+
+@media only screen and (max-width: 1200px) {
+	div {
+		width: 100%;
+		text-align: center;
+	}
+}
 </style>
