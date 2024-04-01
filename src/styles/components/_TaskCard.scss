@@ -29,11 +29,14 @@
 		> .task-title {
 			font-size: 20px;
 			font-weight: bold;
+			white-space: break-spaces;
+			word-break: break-word;
 		}
 
 		> .task-description {
 			text-align: justify;
 			white-space: break-spaces;
+			word-break: break-word;
 		}
 	}
 }

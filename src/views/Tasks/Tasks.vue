@@ -128,11 +128,25 @@ export default {
 	methods: {
 		async fetchTasks() {
 			if (this.$myGlobalVariable.accessToken) {
-				fetch(process.env.VUE_APP_BASE_URL + "/tasks", { headers: { Authorization: "Bearer " + this.$myGlobalVariable.accessToken } })
-					.then((res) => res.json())
+				await fetch(process.env.VUE_APP_BASE_URL + "/tasks", { headers: { Authorization: "Bearer " + this.$myGlobalVariable.accessToken } }).then((res) => {
+					if (!res.ok) {
+						this.logOut();
+					} else {
+						res.json().then((data) => (this.tasks = data));
+					}
+				});
+				/* .then((res) => res.json())
 					.then((data) => (this.tasks = data))
-					.catch((err) => console.log(err.message));
+					.catch((err) => console.log(err.message)); */
 			}
+		},
+		logOut() {
+			this.$myGlobalVariable.username = "";
+			this.$myGlobalVariable.accessToken = "";
+			localStorage.accessToken = "";
+			localStorage.username = "";
+
+			this.$router.push({ name: "signIn" });
 		},
 		openModal(title, description) {
 			this.modalOpened = true;

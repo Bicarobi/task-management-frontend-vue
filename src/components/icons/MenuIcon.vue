@@ -20,7 +20,7 @@ div {
 }
 
 div:hover {
-	path {
+	> path {
 		fill: var(--color2);
 	}
 }

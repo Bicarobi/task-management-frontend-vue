@@ -5,7 +5,7 @@
   --icon-size2: 52px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   :root {
     --icon-size2: 32px;
   }
@@ -49,7 +49,7 @@
     padding: 0px 100px 30px 100px;
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .about-container {
     padding: 0px 40px 30px 40px;
   }
@@ -61,7 +61,7 @@
   width: -moz-fit-content;
   width: fit-content;
 }
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .about-container > .current-page {
     font-size: 26px;
   }
@@ -79,7 +79,7 @@
     padding: 0px 100px 30px 100px;
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .home-container {
     padding: 0px 40px 30px 40px;
   }
@@ -91,7 +91,7 @@
   width: -moz-fit-content;
   width: fit-content;
 }
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .home-container > .current-page {
     font-size: 26px;
   }
@@ -108,7 +108,7 @@
     padding: 0px 40px 30px 40px;
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .tasks-container {
     padding: 0px 20px 30px 20px;
   }
@@ -121,7 +121,7 @@
   width: fit-content;
   margin-bottom: 20px;
 }
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .tasks-container > .current-page {
     font-size: 26px;
     padding-left: 20px;
@@ -135,7 +135,7 @@
   justify-items: center;
   gap: 20px;
 }
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .tasks-container > .grid-container {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -236,7 +236,7 @@
     padding: 0px 100px 30px 100px;
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .sign-in-container {
     padding: 0px 20px 30px 20px;
   }
@@ -248,7 +248,7 @@
   width: -moz-fit-content;
   width: fit-content;
 }
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .sign-in-container > .current-page {
     font-size: 26px;
   }
@@ -267,7 +267,7 @@
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.06);
   border-radius: 20px;
 }
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .sign-in-container > .modal-content {
     margin: 50px auto 0 auto;
     padding: 40px 40px;
@@ -330,7 +330,7 @@
     padding: 0px 100px 30px 100px;
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .sign-up-container {
     padding: 0px 20px 30px 20px;
   }
@@ -342,7 +342,7 @@
   width: -moz-fit-content;
   width: fit-content;
 }
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .sign-up-container > .current-page {
     font-size: 26px;
   }
@@ -361,7 +361,7 @@
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.06);
   border-radius: 20px;
 }
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .sign-up-container > .modal-content {
     margin: 50px auto 0 auto;
     padding: 40px 40px;
@@ -581,10 +581,13 @@
 .task-card-container > .task-card-content > .task-title {
   font-size: 20px;
   font-weight: bold;
+  white-space: break-spaces;
+  word-break: break-word;
 }
 .task-card-container > .task-card-content > .task-description {
   text-align: justify;
   white-space: break-spaces;
+  word-break: break-word;
 }
 
 .options-menu-container {
@@ -729,7 +732,7 @@ body {
   background-color: var(--color5);
   padding-top: 100px;
 }
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   body {
     padding-top: 75px;
   }
@@ -758,7 +761,7 @@ body {
 ::-webkit-scrollbar {
   width: 10px;
 }
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   ::-webkit-scrollbar {
     display: none;
   }
