@@ -1,6 +1,5 @@
 <template>
 	<div class="sign-up-container">
-		<div class="current-page">{{ $t("sign-up-view.current-page") }}</div>
 		<div class="modal-content">
 			<form
 				@submit.prevent="

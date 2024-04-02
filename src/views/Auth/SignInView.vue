@@ -1,6 +1,5 @@
 <template>
 	<div class="sign-in-container">
-		<div class="current-page">{{ $t("sign-in-view.current-page") }}</div>
 		<div class="modal-content" v-if="!this.$myGlobalVariable.username">
 			<form @submit.prevent="handleSubmit" v-on:keydown.enter.prevent>
 				<label>{{ $t("user-auth.username") }}:</label>
