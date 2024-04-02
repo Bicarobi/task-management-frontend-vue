@@ -20,6 +20,12 @@
 						<!-- <router-link :to="{ name: 'createTask' }">Create a Task</router-link>
 					<router-link :to="{ name: 'deleteTask' }">Delete a Task</router-link> -->
 
+						<img
+							class="profile-image"
+							:src="this.$myGlobalVariable.profileImage ? this.$myGlobalVariable.profileImage : require('../assets/placeholder.png')"
+							v-if="this.$myGlobalVariable.username"
+						/>
+
 						<router-link
 							class="username"
 							:to="{ name: 'profile', params: { username: this.$myGlobalVariable.username } }"
@@ -31,7 +37,7 @@
 						<!-- <SettingsIcon @click="openSettings(false, false)" v-if="this.$myGlobalVariable.username" />
 
 				<SettingsMenu v-if="this.$myGlobalVariable.username && this.settingsMenuOpened" @close-menu="openSettings(true, false)" /> -->
-						<button @click="logOut" v-if="this.$myGlobalVariable.username">{{ $t("user-auth.sign-out") }}</button>
+						<button @click="this.$emit('log-out')" v-if="this.$myGlobalVariable.username">{{ $t("user-auth.sign-out") }}</button>
 
 						<router-link :to="{ name: 'signIn' }" v-if="!this.$myGlobalVariable.username" @click="openNavbarMenu(false, false)">{{ $t("user-auth.sign-in") }}</router-link>
 
@@ -77,6 +83,7 @@ export default {
 		checkStorage() {
 			this.$myGlobalVariable.username = localStorage.username;
 			this.$myGlobalVariable.accessToken = localStorage.accessToken;
+			this.$myGlobalVariable.profileImage = localStorage.profileImage;
 
 			if (localStorage.darkMode == "enabled") {
 				this.switchedTheme = true;
@@ -109,16 +116,6 @@ export default {
 				localStorage.darkMode = "disabled";
 			}
 			this.switchedTheme = !this.switchedTheme;
-		},
-		logOut() {
-			this.$emit("close-menu");
-
-			this.$myGlobalVariable.username = "";
-			this.$myGlobalVariable.accessToken = "";
-			localStorage.accessToken = "";
-			localStorage.username = "";
-
-			this.$router.push({ name: "signIn" });
 		},
 	},
 	beforeMount() {

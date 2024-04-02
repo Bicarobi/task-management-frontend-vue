@@ -9,6 +9,7 @@ const app = createApp(App);
 app.config.globalProperties.$myGlobalVariable = reactive({
 	accessToken: "",
 	username: "",
+	profileImage: "",
 	windowWidth: null,
 	tabletWindowWidth: 1200,
 	mobileWindowWidth: 700,

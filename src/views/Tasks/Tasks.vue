@@ -129,7 +129,7 @@ export default {
 			if (this.$myGlobalVariable.accessToken) {
 				await fetch(process.env.VUE_APP_BASE_URL + "/tasks", { headers: { Authorization: "Bearer " + this.$myGlobalVariable.accessToken } }).then((res) => {
 					if (!res.ok) {
-						this.logOut();
+						this.$emit("log-out");
 					} else {
 						res.json().then((data) => (this.tasks = data));
 					}
@@ -138,14 +138,6 @@ export default {
 					.then((data) => (this.tasks = data))
 					.catch((err) => console.log(err.message)); */
 			}
-		},
-		logOut() {
-			this.$myGlobalVariable.username = "";
-			this.$myGlobalVariable.accessToken = "";
-			localStorage.accessToken = "";
-			localStorage.username = "";
-
-			this.$router.push({ name: "signIn" });
 		},
 		openModal(title, description) {
 			this.modalOpened = true;

@@ -33,26 +33,6 @@ export default {
 		};
 	},
 	methods: {
-		/* async handleSubmit() {
-			const requestOptions = {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({ username: this.username, password: this.password }),
-			};
-
-			await fetch(process.env.VUE_APP_BASE_URL + "/auth/signin", requestOptions)
-				.then((res) => res.json())
-				.then((data) => {
-					this.$myGlobalVariable.accessToken = data.accessToken;
-					this.$myGlobalVariable.username = this.username;
-					localStorage.accessToken = this.$myGlobalVariable.accessToken;
-					localStorage.username = this.$myGlobalVariable.username;
-					setTimeout(this.logOut, 3600000);
-				})
-				.then(console.log(this.$myGlobalVariable.username));
-
-			this.$router.push({ name: "tasks" });
-		}, */
 		async handleSubmit() {
 			const requestOptions = {
 				method: "POST",
@@ -72,7 +52,10 @@ export default {
 						this.$myGlobalVariable.username = this.username;
 						localStorage.accessToken = this.$myGlobalVariable.accessToken;
 						localStorage.username = this.$myGlobalVariable.username;
-						setTimeout(this.logOut, 3600000);
+						setTimeout(() => this.$emit("log-out"), 3600000);
+
+						this.getProfileImage();
+
 						this.$router.push({ name: "tasks" });
 					} else {
 						var messages = ["invalid-credentials"];
@@ -80,13 +63,15 @@ export default {
 					}
 				});
 		},
-		logOut() {
-			this.$myGlobalVariable.username = "";
-			this.$myGlobalVariable.accessToken = "";
-			localStorage.accessToken = "";
-			localStorage.username = "";
-
-			this.$router.push({ name: "signIn" });
+		async getProfileImage() {
+			if (this.$myGlobalVariable.accessToken) {
+				await fetch(process.env.VUE_APP_BASE_URL + "/files", { headers: { Authorization: "Bearer " + this.$myGlobalVariable.accessToken } })
+					.then((res) => res.text())
+					.then((data) => {
+						this.$myGlobalVariable.profileImage = data;
+						localStorage.profileImage = this.$myGlobalVariable.profileImage;
+					});
+			}
 		},
 		type(obj) {
 			return Object.prototype.toString.call(obj).slice(8, -1);

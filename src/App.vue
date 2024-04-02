@@ -1,7 +1,7 @@
 <template>
-	<NavBar />
+	<NavBar @log-out="this.logOut" />
 	<PopupModal v-show="this.showPopup" :messages="this.messages" @click="this.showPopup = false" />
-	<router-view @show-popup="this.showPopupModal" />
+	<router-view @show-popup="this.showPopupModal" @log-out="this.logOut" />
 </template>
 
 <script>
@@ -37,6 +37,16 @@ export default {
 			this.timer = setTimeout(() => {
 				this.showPopup = false;
 			}, 5000);
+		},
+		logOut() {
+			this.$myGlobalVariable.username = "";
+			this.$myGlobalVariable.accessToken = "";
+			this.$myGlobalVariable.profileImage = "";
+			localStorage.accessToken = "";
+			localStorage.username = "";
+			localStorage.profileImage = "";
+
+			this.$router.push({ name: "signIn" });
 		},
 	},
 };
