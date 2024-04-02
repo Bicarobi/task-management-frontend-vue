@@ -1,6 +1,5 @@
 <template>
 	<div class="tasks-container">
-		<div class="current-page">{{ $t("tasks.current-page") }}</div>
 		<div v-if="!this.$myGlobalVariable.username">{{ $t("user-auth.not-logged-in") }}!</div>
 		<div class="grid-container" v-else-if="tasks.length">
 			<div class="grid-left-side">
@@ -63,7 +62,7 @@
 		<div class="no-tasks-container" v-else>
 			<div>{{ $t("tasks.no-task-found") }}</div>
 			<div class="create-task-container">
-				<div>{{ $t("tasks.first-task") }}!</div>
+				<div>{{ $t("tasks.first-task") }}</div>
 				<PlusIcon @click="openCreateTaskModal(true)" />
 			</div>
 		</div>

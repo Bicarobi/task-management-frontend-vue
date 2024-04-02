@@ -1,5 +1,6 @@
 <template>
 	<div class="sign-up-container">
+		<div class="current-page">{{ $t("sign-up-view.current-page") }}</div>
 		<div class="modal-content">
 			<form
 				@submit.prevent="
@@ -19,6 +20,10 @@
 
 				<div class="submit">
 					<button>{{ $t("user-auth.create-account") }}</button>
+				</div>
+				<div class="switch-text">
+					{{ $t("sign-up-view.switch-text") }}
+					<router-link :to="{ name: 'signIn' }">{{ $t("user-auth.sign-in") }}!</router-link>
 				</div>
 			</form>
 		</div>

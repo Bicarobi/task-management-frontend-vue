@@ -1,5 +1,6 @@
 <template>
 	<div class="sign-in-container">
+		<div class="current-page">{{ $t("sign-in-view.current-page") }}</div>
 		<div class="modal-content" v-if="!this.$myGlobalVariable.username">
 			<form @submit.prevent="handleSubmit" v-on:keydown.enter.prevent>
 				<label>{{ $t("user-auth.username") }}:</label>
@@ -12,6 +13,10 @@
 
 				<div class="submit">
 					<button>{{ $t("user-auth.sign-in") }}</button>
+				</div>
+				<div class="switch-text">
+					{{ $t("sign-in-view.switch-text") }}
+					<router-link :to="{ name: 'signUp' }">{{ $t("user-auth.sign-up") }}!</router-link>
 				</div>
 			</form>
 		</div>
