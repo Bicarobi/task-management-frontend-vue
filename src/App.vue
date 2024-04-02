@@ -1,6 +1,6 @@
 <template>
 	<NavBar />
-	<PopupModal v-if="this.showPopup" :messages="this.messages" @click="this.showPopup = false" />
+	<PopupModal v-show="this.showPopup" :messages="this.messages" @click="this.showPopup = false" />
 	<router-view @show-popup="this.showPopupModal" />
 </template>
 

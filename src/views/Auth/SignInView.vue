@@ -8,6 +8,8 @@
 				<label>{{ $t("user-auth.password") }}:</label>
 				<input type="password" required v-model="password" />
 
+				<div class="error-text" v-show="this.showUsernameError">{{ $t("popup.invalid-credentials") }}</div>
+
 				<div class="submit">
 					<button>{{ $t("user-auth.sign-in") }}</button>
 				</div>
@@ -23,10 +25,11 @@ export default {
 		return {
 			username: "",
 			password: "",
+			showUsernameError: false,
 		};
 	},
 	methods: {
-		async handleSubmit() {
+		/* async handleSubmit() {
 			const requestOptions = {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
@@ -45,6 +48,33 @@ export default {
 				.then(console.log(this.$myGlobalVariable.username));
 
 			this.$router.push({ name: "tasks" });
+		}, */
+		async handleSubmit() {
+			const requestOptions = {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ username: this.username, password: this.password }),
+			};
+
+			await fetch(process.env.VUE_APP_BASE_URL + "/auth/signin", requestOptions)
+				.then((res) => res.json())
+				.then((data) => {
+					console.log(data);
+					if (data.accessToken) {
+						var messages = ["logged-in"];
+						this.$emit("show-popup", messages);
+
+						this.$myGlobalVariable.accessToken = data.accessToken;
+						this.$myGlobalVariable.username = this.username;
+						localStorage.accessToken = this.$myGlobalVariable.accessToken;
+						localStorage.username = this.$myGlobalVariable.username;
+						setTimeout(this.logOut, 3600000);
+						this.$router.push({ name: "tasks" });
+					} else {
+						var messages = ["invalid-credentials"];
+						this.$emit("show-popup", messages);
+					}
+				});
 		},
 		logOut() {
 			this.$myGlobalVariable.username = "";
@@ -53,6 +83,9 @@ export default {
 			localStorage.username = "";
 
 			this.$router.push({ name: "signIn" });
+		},
+		type(obj) {
+			return Object.prototype.toString.call(obj).slice(8, -1);
 		},
 	},
 };

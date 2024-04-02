@@ -368,7 +368,7 @@
   }
 }
 .sign-up-container > .modal-content > form {
-  max-width: 200px;
+  width: 200px;
   text-align: left;
 }
 .sign-up-container > .modal-content > form > label {
@@ -391,6 +391,11 @@
   color: var(--color3);
   font-weight: bold;
   background-color: var(--color1);
+}
+.sign-up-container > .modal-content > form > .error-text {
+  margin-top: 8px;
+  font-size: 13px;
+  color: red;
 }
 .sign-up-container > .modal-content > form > .submit {
   text-align: center;
@@ -761,7 +766,7 @@
   color: var(--color3);
   position: fixed;
   left: 50%;
-  top: 80px;
+  top: 100px;
   transform: translate(-50%, -50%);
   padding: 10px 20px;
   border-radius: 20px;

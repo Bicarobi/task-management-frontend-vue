@@ -14,7 +14,9 @@
 		"username-exists": "Korisničko ime već postoji!",
 		"account-created": "Korisnički račun je napravljen!",
 		"username-weak": "Korisničko ime mora sadržavati između 3 i 20 znakova!",
-		"password-weak": "Lozinka mora sadržavati najmanje 8 znakova i barem 1 broj"
+		"password-weak": "Lozinka mora sadržavati najmanje 8 znakova i barem 1 broj!",
+		"invalid-credentials": "Nevažeći podaci! Pokušajte ponovno.",
+		"logged-in": "Uspješno ste se prijavili!"
 	},
 	"home-view": {
 		"current-page": "Početna",

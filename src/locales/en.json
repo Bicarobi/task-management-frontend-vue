@@ -14,7 +14,9 @@
 		"username-exists": "Username already exists!",
 		"account-created": "User account has been made!",
 		"username-weak": "Username must be between 3 and 20 characters long!",
-		"password-weak": "Password must be at least 8 characters long and contain 1 number!"
+		"password-weak": "Password must be at least 8 characters long and contain 1 number!",
+		"invalid-credentials": "Invalid credentials! Try again.",
+		"logged-in": "Logged in successfully!"
 	},
 	"home-view": {
 		"current-page": "Home",
