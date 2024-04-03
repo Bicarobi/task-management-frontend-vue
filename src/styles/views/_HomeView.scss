@@ -1,27 +1,40 @@
 .home-container {
 	width: 100%;
 	height: 100%;
-	padding: 0px 160px 30px 160px;
+	padding: 0px 80px 30px 80px;
 
-	text-align: justify;
 	color: var(--color3);
 
 	@media #{$tablet} {
-		padding: 0px 100px 30px 100px;
-	}
-
-	@media #{$mobile} {
 		padding: 0px 40px 30px 40px;
 	}
 
-	> .current-page {
-		font-size: 26px;
-		text-transform: capitalize;
-		font-weight: bold;
-		width: fit-content;
+	@media #{$mobile} {
+		padding: 0px 20px 30px 20px;
+	}
 
-		@media #{$mobile} {
+	> .content-container {
+		background-color: var(--color1);
+		border-radius: 15px;
+		padding: 20px;
+		max-width: 500px;
+		margin: 0 auto;
+
+		> .current-page {
 			font-size: 26px;
+			text-transform: capitalize;
+			font-weight: bold;
+			width: fit-content;
+
+			@media #{$mobile} {
+				font-size: 26px;
+			}
+		}
+
+		> .text {
+			font-size: 18px;
+			text-align: justify;
+			white-space: pre-line;
 		}
 	}
 }
