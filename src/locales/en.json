@@ -57,6 +57,7 @@
 		"first-task": "Create your first task!"
 	},
 	"profile-view": {
-		"upload": "Change Image"
+		"upload": "Change Image",
+		"file-error": "File size must be 3MB or less!"
 	}
 }

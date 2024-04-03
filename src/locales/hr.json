@@ -57,6 +57,7 @@
 		"first-task": "Izradi svoj prvi zadatak!"
 	},
 	"profile-view": {
-		"upload": "Promijeni Sliku"
+		"upload": "Promijeni Sliku",
+		"file-error": "Veličina datoteke mora biti 3 MB ili manje!"
 	}
 }

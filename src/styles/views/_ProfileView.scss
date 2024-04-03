@@ -68,6 +68,12 @@
 			color: white;
 		}
 
+		> .error-text {
+			margin-top: 8px;
+			font-size: 13px;
+			color: red;
+		}
+
 		> form {
 			> input[type="file"] {
 				display: none;
