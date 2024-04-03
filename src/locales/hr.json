@@ -19,7 +19,7 @@
 		"logged-in": "Uspješno ste se prijavili!"
 	},
 	"loading": {
-		"loading-data": "Učitavanje podataka... (Može potrajati minutu)"
+		"loading-data": "Učitavanje podataka... (može potrajati minutu)"
 	},
 	"home-view": {
 		"current-page": "Početna",

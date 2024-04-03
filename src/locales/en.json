@@ -19,7 +19,7 @@
 		"logged-in": "Logged in successfully!"
 	},
 	"loading": {
-		"loading-data": "Loading data... (May take a minute)"
+		"loading-data": "Loading data... (may take a minute)"
 	},
 	"home-view": {
 		"current-page": "Home",

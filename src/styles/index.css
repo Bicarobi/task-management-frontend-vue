@@ -920,6 +920,7 @@
   transform: translate(-50%, -50%);
   padding: 10px 20px;
   border-radius: 20px;
+  font-weight: bold;
   z-index: 60;
 }
 
@@ -946,6 +947,7 @@
   transform: translate(-50%, -50%);
   padding: 10px 20px;
   border-radius: 20px;
+  font-weight: bold;
   z-index: 70;
   gap: 20px;
   display: flex;
