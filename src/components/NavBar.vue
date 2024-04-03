@@ -21,24 +21,24 @@
 						<!-- <router-link :to="{ name: 'createTask' }">Create a Task</router-link>
 					<router-link :to="{ name: 'deleteTask' }">Delete a Task</router-link> -->
 
-						<img
-							class="profile-image"
-							:src="this.$myGlobalVariable.profileImage ? this.$myGlobalVariable.profileImage : require('../assets/placeholder.png')"
-							v-if="this.$myGlobalVariable.username"
-						/>
+						<router-link :to="{ name: 'profile', params: { username: this.$myGlobalVariable.username } }" v-if="this.$myGlobalVariable.username" @click="openNavbarMenu(false, false)">
+							<div class="profile-image-router">
+								{{ this.$myGlobalVariable.username }}
+								<img class="profile-image" :src="this.$myGlobalVariable.profileImage ? this.$myGlobalVariable.profileImage : require('../assets/placeholder.png')" /></div
+						></router-link>
 
-						<router-link
+						<!-- <router-link
 							class="username"
 							:to="{ name: 'profile', params: { username: this.$myGlobalVariable.username } }"
 							v-if="this.$myGlobalVariable.username"
 							@click="openNavbarMenu(false, false)"
 							>{{ this.$myGlobalVariable.username }}</router-link
-						>
+						> -->
 
 						<!-- <SettingsIcon @click="openSettings(false, false)" v-if="this.$myGlobalVariable.username" />
 
 				<SettingsMenu v-if="this.$myGlobalVariable.username && this.settingsMenuOpened" @close-menu="openSettings(true, false)" /> -->
-						<button @click="this.$emit('log-out')" v-if="this.$myGlobalVariable.username">{{ $t("user-auth.sign-out") }}</button>
+						<!-- <button @click="this.$emit('log-out')" v-if="this.$myGlobalVariable.username">{{ $t("user-auth.sign-out") }}</button> -->
 
 						<router-link :to="{ name: 'signIn' }" v-if="!this.$myGlobalVariable.username" @click="openNavbarMenu(false, false)">{{ $t("user-auth.sign-in") }}</router-link>
 

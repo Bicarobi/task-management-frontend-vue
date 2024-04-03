@@ -53,7 +53,10 @@
 			"description": "Description",
 			"status": "Status"
 		},
-		"no-task-found": "No tasks found",
+		"no-task-found": "No tasks found.",
 		"first-task": "Create your first task!"
+	},
+	"profile-view": {
+		"upload": "Change Image"
 	}
 }

@@ -53,7 +53,10 @@
 			"description": "Opis",
 			"status": "Status"
 		},
-		"no-task-found": "Nijedan zadatak nije pronađen",
+		"no-task-found": "Nijedan zadatak nije pronađen.",
 		"first-task": "Izradi svoj prvi zadatak!"
+	},
+	"profile-view": {
+		"upload": "Promijeni Sliku"
 	}
 }
