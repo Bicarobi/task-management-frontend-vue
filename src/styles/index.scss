@@ -71,6 +71,7 @@ $desktop: "(min-width: 1201px)";
 @import "./components/CreateTaskModal";
 @import "./components/EditTaskModal";
 @import "./components/PopupModal";
+@import "./components/LoadingModal";
 
 body {
 	background-color: var(--color5);

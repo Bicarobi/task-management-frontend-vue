@@ -127,16 +127,16 @@ export default {
 	methods: {
 		async fetchTasks() {
 			if (this.$myGlobalVariable.accessToken) {
+				this.$emit("show-loading", true);
+
 				await fetch(process.env.VUE_APP_BASE_URL + "/tasks", { headers: { Authorization: "Bearer " + this.$myGlobalVariable.accessToken } }).then((res) => {
 					if (!res.ok) {
 						this.$emit("log-out");
 					} else {
 						res.json().then((data) => (this.tasks = data));
 					}
+					this.$emit("show-loading", false);
 				});
-				/* .then((res) => res.json())
-					.then((data) => (this.tasks = data))
-					.catch((err) => console.log(err.message)); */
 			}
 		},
 		openModal(title, description) {

@@ -50,6 +50,8 @@ export default {
 				body: JSON.stringify({ username: this.username, password: this.password }),
 			};
 
+			this.$emit("show-loading", true);
+
 			await fetch(process.env.VUE_APP_BASE_URL + "/auth/signup", requestOptions)
 				.then((res) => res.json())
 				.then((data) => {
@@ -71,6 +73,8 @@ export default {
 					} else {
 						this.$emit("show-popup", messages);
 					}
+
+					this.$emit("show-loading", false);
 				});
 		},
 		checkUsername() {

@@ -76,7 +76,7 @@ const routes = [
 	{
 		path: "/:catchAll(.*)",
 		name: "notFound",
-		component: NotFound,
+		component: HomeView,
 	},
 ];
 

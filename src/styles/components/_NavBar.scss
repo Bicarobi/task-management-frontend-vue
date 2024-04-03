@@ -43,6 +43,13 @@
 				font-weight: bold;
 				color: var(--color3);
 			}
+
+			> a {
+				font-size: 26px;
+				font-weight: bold;
+				color: var(--color3);
+				text-decoration: none;
+			}
 		}
 
 		> .grid-right-side {

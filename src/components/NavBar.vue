@@ -2,7 +2,8 @@
 	<div class="navbar-container">
 		<div class="grid-container">
 			<div class="grid-left-side">
-				<div class="site-name">Tasker</div>
+				<!-- <div class="site-name">Tasker</div> -->
+				<router-link :to="{ name: this.$myGlobalVariable.username ? 'tasks' : 'home' }">Tasker</router-link>
 			</div>
 			<div class="grid-right-side">
 				<div class="nav-bar-menu">

@@ -55,9 +55,12 @@ export default {
 				body: JSON.stringify({ title: this.editTitle, description: this.editDescription, status: this.editStatus }),
 			};
 
+			this.$emit("show-loading", true);
+
 			await fetch(process.env.VUE_APP_BASE_URL + "/tasks/" + this.editId, requestOptions).then((res) => console.log(res.json()));
 
 			this.$emit("close-edit-task-modal");
+			this.$emit("show-loading", false);
 		},
 	},
 	watch: {

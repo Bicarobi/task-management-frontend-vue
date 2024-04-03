@@ -53,9 +53,12 @@ export default {
 				body: JSON.stringify({ title: this.title, description: this.description, status: this.status }),
 			};
 
+			this.$emit("show-loading", true);
+
 			await fetch(process.env.VUE_APP_BASE_URL + "/tasks", requestOptions).then((res) => console.log(res.json()));
 
 			this.$emit("close-create-task-modal");
+			this.$emit("show-loading", false);
 		},
 	},
 };
